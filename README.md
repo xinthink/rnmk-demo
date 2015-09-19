@@ -5,7 +5,7 @@
 - [Docs (annotated source)][docs]
 - [Change logs][releases]
 
-## Debuggin local RNMK module
+## Debugging local RNMK module
 
 - checkout [RNMK][gh]
 - link your local RNMK module, and launch the packager
