@@ -1,0 +1,12 @@
+rootProject.name = 'RNSample'
+
+// resolve the symbolic link if any
+def resolve(File dir) {
+    dir.toPath().toAbsolutePath().toFile();
+}
+
+
+include ':app'
+
+include ':RNMaterialKit'
+project(':RNMaterialKit').projectDir = resolve file('../node_modules/react-native-material-kit/android')
