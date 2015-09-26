@@ -5,37 +5,97 @@
 'use strict';
 
 var React = require('react-native');
+
 var {
   AppRegistry,
   StyleSheet,
-  Text,
   View,
+  Text,
+  ScrollView,
+  Navigator,
+  // ToolbarAndroid,
+  TouchableOpacity,
 } = React;
 
-var RNSample = React.createClass({
-  render: function() {
+var Buttons = require('./app/buttons');
+// var TextFields = require('./app/textfields');
+// var Toggles = require('./app/toggles');
+// var Progress = require('./app/progress');
+var Sliders = require('./app/sliders');
+
+var Home = React.createClass({
+  render: function () {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <ScrollView style={styles.list}
+                  contentContainerStyle={styles.container}>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Buttons',
+            component: Buttons,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Buttons</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            name: 'Sliders',
+            component: Sliders,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Sliders</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
-  }
+  },
+});
+
+var Example = React.createClass({
+  _renderScene: function (route, navigator) {
+    console.log('[Ex.] rendering', route.name);
+    switch (route.name) {
+      case 'Examples':
+        return <Home navigator={navigator}/>;
+      default:
+        return (
+          <route.component/>
+        );
+      // default:
+      //   return (
+      //     <View style={{flex: 1}}>
+      //       <ToolbarAndroid actions={[]}
+      //         title={route.name}
+      //         navIcon={require('image!ic_back')}
+      //         onIconClicked={navigator.pop}
+      //         style={styles.toolbar}
+      //       />
+      //       <route.component/>
+      //     </View>
+      //   );
+    }
+  },
+
+  render: function () {
+    return (
+      <Navigator
+        initialRoute={{name: 'Examples'}}
+        renderScene={this._renderScene}
+        />
+    );
+  },
 });
 
 var styles = StyleSheet.create({
+  toolbar: {
+    backgroundColor: '#a9a9a9',
+    height: 56,
+  },
+  list: {
+    backgroundColor: '#F5FCFF',
+    paddingTop: 20,
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
@@ -45,8 +105,12 @@ var styles = StyleSheet.create({
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginTop: 20, marginBottom: 0,
+  },
+  pushLabel: {
+    padding: 10,
+    color: '#2196F3',
   },
 });
 
-AppRegistry.registerComponent('RNSample', () => RNSample);
+AppRegistry.registerComponent('Example', () => Example);

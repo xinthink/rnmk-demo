@@ -66,12 +66,6 @@ const CheckedIconToggle = MKIconToggle.toggle()
   .withOnPress(this._onToggleClicked)
   .build();
 
-const FatSwitch = MKSwitch.mkSwitch()
-  .withThumbRadius(toPx(7))
-  .withStyle(styles.appleSwitch)
-  .withOnCheckedChange(() => console.log('fat switch clicked'))
-  .build();
-
 class Toggles extends Component {
   _onChecked(event) {
     console.log(`icon toggle is checked? ${event.checked}`);
@@ -105,21 +99,6 @@ class Toggles extends Component {
                     style={styles.toggleText}>B</Text>
             </MKIconToggle>
             <Text style={styles.legendLabel}>Icon off</Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <MKSwitch
-              checked={true}
-              onCheckedChange={this._onChecked}
-              onPress={this._onToggleClicked}
-              style={styles.switch}
-            />
-            <Text style={styles.legendLabel}>Switch on</Text>
-          </View>
-          <View style={styles.col}>
-            <FatSwitch/>
-            <Text style={styles.legendLabel}>Switch off</Text>
           </View>
         </View>
         <Text style={styles.legendLabel}>'Pure' JSX components</Text>
