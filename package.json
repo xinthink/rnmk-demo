@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "packager.sh",
-    "log": "adb logcat ReactNativeJS:V AndroidRuntime:E *:S"
+    "log": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E *:S"
   },
   "dependencies": {
     "react-native": ">=0.8.0 <1.0.0",

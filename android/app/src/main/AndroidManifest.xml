@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rnsample">
+    package="com.github.xinthink.rnmk.demo">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
