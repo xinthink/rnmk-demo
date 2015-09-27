@@ -54,8 +54,10 @@ class Sliders extends Component {
 
   render() {
     return (
-      <ScrollView style={styles.scrollView}
-                  contentContainerStyle={styles.container}>
+      <View style={[styles.scrollView, {
+              marginTop: 120,
+            }]}
+            contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
             <mdl.Slider style={styles.slider}/>
@@ -71,7 +73,7 @@ class Sliders extends Component {
             </Text>
           </View>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }

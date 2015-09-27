@@ -51,7 +51,6 @@ var Home = React.createClass({
 
 var Example = React.createClass({
   _renderScene: function (route, navigator) {
-    console.log('[Ex.] rendering', route.name);
     switch (route.name) {
       case 'Examples':
         return <Home navigator={navigator}/>;
