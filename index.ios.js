@@ -22,9 +22,11 @@ var Toggles = require('./app/toggles');
 var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
 
+var Cards = require('./app/cards');
+
 var Home = React.createClass({
   render: function () {
-    return (
+   return (
       <ScrollView style={styles.list}
                   contentContainerStyle={styles.container}>
         <TouchableOpacity onPress={() => {
@@ -67,9 +69,18 @@ var Home = React.createClass({
         }}>
           <Text style={styles.pushLabel}>Sliders</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Cards',
+            component: Cards,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Cards</Text>
+        </TouchableOpacity>
       </ScrollView>
     );
-  },
+
+}
 });
 
 var Example = React.createClass({
