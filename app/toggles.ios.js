@@ -49,14 +49,12 @@ const styles = Object.assign(appStyles, StyleSheet.create({
     color: getTheme().primaryColor,
   },
   switch: {
-    marginTop: toPx(5),
-    marginBottom: toPx(5),
+    marginTop: 2,
+    // marginBottom: 5,
   },
   appleSwitch: {
-    width: toPx(26),
-    height: toPx(15),
-    marginTop: toPx(2),
-    marginBottom: toPx(5),
+    marginTop: 7,
+    marginBottom: 7,
   },
 }));
 
@@ -111,6 +109,8 @@ class Toggles extends Component {
           </View>
           <View style={styles.col}>
             <mdl.Switch style={styles.appleSwitch}
+                        trackSize={30}
+                        trackLength={52}
                         onColor="rgba(255,152,0,.3)"
                         thumbOnColor={MKColor.Orange}
                         rippleColor="rgba(255,152,0,.2)"
