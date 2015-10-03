@@ -1,4 +1,4 @@
-rootProject.name = 'RNSample'
+rootProject.name = 'RNMKDemo'
 
 // resolve the symbolic link if any
 def resolve(File dir) {
