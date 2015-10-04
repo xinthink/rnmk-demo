@@ -32,8 +32,9 @@ const styles = Object.assign(appStyles, StyleSheet.create({
     color: 'white',
   },
   fab: {
-    // width: 42, height: 42,
-    // borderRadius: 21,  // cannot get style by id since react-native 0.7, set corner radius explicitly
+    // width: 200,
+    // height: 200,
+    // borderRadius: 100,
   },
 }));
 
