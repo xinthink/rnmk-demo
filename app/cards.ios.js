@@ -51,7 +51,9 @@ const Cards = React.createClass({
       		    Mauris sagittis pellentesque lacus eleifend lacinia...
         		</Text>
     				<View style={MKCardStyles.menu}>{menu}</View>
-    				<Text style={MKCardStyles.action}>My Action</Text>
+            <View style={MKCardStyles.action}>
+              <Text>My Action</Text>
+            </View>
     			</View>
   			</View>
 			</ScrollView>
