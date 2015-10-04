@@ -18,7 +18,7 @@ var {
 } = React;
 
 var Buttons = require('./app/buttons');
-// var TextFields = require('./app/textfields');
+var TextFields = require('./app/textfields');
 var Toggles = require('./app/toggles');
 // var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
@@ -43,6 +43,14 @@ var Home = React.createClass({
           });
         }}>
           <Text style={styles.pushLabel}>Sliders</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            name: 'Textfields',
+            component: TextFields,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Textfields</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({

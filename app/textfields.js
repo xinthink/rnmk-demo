@@ -20,17 +20,11 @@ const {
   mdl,
 } = MK;
 
-const toPx = PixelRatio.getPixelSizeForLayoutSize.bind(PixelRatio);
-
 const styles = Object.assign(appStyles, StyleSheet.create({
   textfield: {
-    width: 100,
-    height: 28,
     marginTop: 22,
   },
   textfieldWithFloatingLabel: {
-    width: 100,
-    height: toPx(20),
     marginTop: 10,
   },
 }));
