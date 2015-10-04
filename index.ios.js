@@ -39,6 +39,30 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
+            title: 'Cards',
+            component: Cards,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Cards</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Loading',
+            component: Progress,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Loading</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Sliders',
+            component: Sliders,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Sliders</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
             title: 'Text Fields',
             component: TextFields,
           });
@@ -52,30 +76,6 @@ var Home = React.createClass({
           });
         }}>
           <Text style={styles.pushLabel}>Toggles</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Progress',
-            component: Progress,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Progress</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Sliders',
-            component: Sliders,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Sliders</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Cards',
-            component: Cards,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Cards</Text>
         </TouchableOpacity>
       </ScrollView>
     );
