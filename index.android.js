@@ -20,7 +20,7 @@ var {
 var Buttons = require('./app/buttons');
 var TextFields = require('./app/textfields');
 var Toggles = require('./app/toggles');
-// var Progress = require('./app/progress');
+var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
 var Cards = require('./app/cards');
 
@@ -44,6 +44,14 @@ var Home = React.createClass({
           });
         }}>
           <Text style={styles.pushLabel}>Cards</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Loading',
+            component: Progress,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Loading</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({

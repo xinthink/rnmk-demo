@@ -19,7 +19,7 @@ const {
 
 const styles = Object.assign(appStyles, StyleSheet.create({
   progress: {
-    width: 125,
+    width: 150,
     //height: 2,
   },
   spinner: {
