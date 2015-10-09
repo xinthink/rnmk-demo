@@ -12,7 +12,6 @@ const {
   Text,
   View,
   ScrollView,
-  PixelRatio,
 } = React;
 
 const {
@@ -35,8 +34,6 @@ const {
 //   thumbOnColor: 'rgb(76,175,80)',
 //   rippleColor: 'rgba(139,195,74,.2)',
 // });
-
-const toPx = PixelRatio.getPixelSizeForLayoutSize.bind(PixelRatio);
 
 const styles = Object.assign(appStyles, StyleSheet.create({
   toggleText: {
@@ -81,20 +78,16 @@ class Toggles extends Component {
           <View style={styles.col}>
             <CheckedIconToggle>
               <Text state_checked={true}
-                    pointerEvents="none"
                     style={[styles.toggleText, styles.toggleOnText]}>T</Text>
-              <Text pointerEvents="none"
-                    style={styles.toggleText}>T</Text>
+              <Text style={styles.toggleText}>T</Text>
             </CheckedIconToggle>
             <Text style={styles.legendLabel}>Icon on</Text>
           </View>
           <View style={styles.col}>
             <MKIconToggle>
               <Text state_checked={true}
-                    pointerEvents="none"
                     style={[styles.toggleText, styles.toggleOnText]}>B</Text>
-              <Text pointerEvents="none"
-                    style={styles.toggleText}>B</Text>
+              <Text style={styles.toggleText}>B</Text>
             </MKIconToggle>
             <Text style={styles.legendLabel}>Icon off</Text>
           </View>

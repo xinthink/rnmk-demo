@@ -14,6 +14,7 @@ const {
 const {
   MKButton,
   MKColor,
+  MKIconToggle,
   MKCardStyles
 } = MK;
 
@@ -26,9 +27,17 @@ const Cards = React.createClass({
     var base64Icon = 'http://www.getmdl.io/assets/demos/welcome_card.jpg';
     var action = (<Text> My action</Text>);
     var menu = (
+       <MKIconToggle
+        checked={true}
+        onCheckedChange={this._onIconChecked}
+        onPress={this._onIconClicked}
+        >
+        <Text pointerEvents="none"
+              style={styles.toggleTextOff}>Off</Text>
         <Text state_checked={true}
               pointerEvents="none"
               style={[styles.toggleText, styles.toggleTextOn]}>On</Text>
+      </MKIconToggle>
     );
     return (
       <ScrollView style={styles.scrollView}>
