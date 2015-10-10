@@ -39,11 +39,15 @@ const SingleColorSpinner = mdl.Spinner.singleColorSpinner()
 const Progress = React.createClass({
   componentDidMount: function () {
     setTimeout((() => {
-      this.refs.progBarWithBuffer.buffer = 0.8;
+      if (this.refs.progBarWithBuffer) {
+        this.refs.progBarWithBuffer.buffer = 0.8;
+      }
     }), 1000);
     setTimeout((() => {
-      this.refs.progBar.progress = 0.6;
-      this.refs.progBarWithBuffer.progress = 0.6;
+      if (this.refs.progBar && this.refs.progBarWithBuffer) {
+        this.refs.progBar.progress = 0.6;
+        this.refs.progBarWithBuffer.progress = 0.6;
+      }
     }), 1600);
   },
 

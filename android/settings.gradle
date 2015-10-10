@@ -1,10 +1,9 @@
 rootProject.name = 'RNMKDemo'
 
-// resolve the symbolic link if any
+// resolve symbolic links if need
 def resolve(File dir) {
-    dir.toPath().toAbsolutePath().toFile();
+    dir.toPath().toAbsolutePath().toFile()
 }
-
 
 include ':app'
 

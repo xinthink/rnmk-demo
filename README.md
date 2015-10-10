@@ -7,11 +7,12 @@
 
 ## Debugging local RNMK module
 
-- checkout [RNMK][gh]
+- checkout [RNMK Demo] and [RNMK][gh]
 - link your local RNMK module, and launch the packager
 ```sh
 cd rnmk-demo
 npm link <local-rnmk-path>
+npm install
 npm start
 ```
 - and then run the rnmk-demo xcode project
@@ -19,6 +20,7 @@ npm start
 ## License
 [MIT][license]
 
+[RNMK Demo]: https://github.com/xinthink/rnmk-demo
 [gh]: https://github.com/xinthink/react-native-material-kit
 [docs]: http://xinthink.github.io/react-native-material-kit/docs/index.html
 [releases]: https://github.com/xinthink/react-native-material-kit/releases
