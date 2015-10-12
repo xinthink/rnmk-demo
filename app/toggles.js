@@ -17,8 +17,8 @@ const {
 const {
   MKIconToggle,
   MKSwitch,
+  MKRadioButton,
   MKColor,
-  mdl,
   getTheme,
   setTheme,
 } = MK;
@@ -62,6 +62,11 @@ const CheckedIconToggle = MKIconToggle.toggle()
   .build();
 
 class Toggles extends Component {
+  constructor() {
+    super();
+    this.radioGroup = new MKRadioButton.Group();
+  }
+
   _onChecked(event) {
     console.log(`icon toggle is checked? ${event.checked}`);
   }
@@ -92,16 +97,15 @@ class Toggles extends Component {
             <Text style={styles.legendLabel}>Icon off</Text>
           </View>
         </View>
-        <Text style={styles.legendLabel}>'Pure' JSX components</Text>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Switch checked={true}
+            <MKSwitch checked={true}
                         style={styles.switch}
             />
             <Text style={styles.legendLabel}>Switch on</Text>
           </View>
           <View style={styles.col}>
-            <mdl.Switch style={styles.appleSwitch}
+            <MKSwitch style={styles.appleSwitch}
                         trackSize={30}
                         trackLength={52}
                         onColor="rgba(255,152,0,.3)"
@@ -111,6 +115,18 @@ class Toggles extends Component {
                         onCheckedChange={(e) => console.log('orange switch checked', e)}
               />
             <Text style={styles.legendLabel}>Switch off</Text>
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <MKRadioButton
+              checked={true}
+              group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>First</Text>
+          </View>
+          <View style={styles.col}>
+            <MKRadioButton group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>Second</Text>
           </View>
         </View>
       </ScrollView>
