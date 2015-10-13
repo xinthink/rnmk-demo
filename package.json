@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "packager.sh",
+    "start": "./packager.sh",
     "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S"
   },
   "dependencies": {
