@@ -26,7 +26,7 @@ const {
 
 const styles = Object.assign(appStyles, StyleSheet.create({
   slider: {
-    width: 110,
+    width: 130,
   },
 }));
 
@@ -36,13 +36,28 @@ const SliderWithValue = mdl.Slider.slider()
   .withMax(100)
   .build();
 
-class Sliders extends Component {
+class ValueText extends Component {
   constructor(props) {
     super(props);
     this.state = {
       curValue: 55,
     };
   }
+
+  onChange(curValue) {
+    this.setState({curValue});
+  }
+
+  render() {
+    return (
+      <Text style={styles.legendLabel}>
+            {this.state.curValue.toFixed(2)} ({this.props.rangeText})
+      </Text>
+    );
+  }
+}
+
+class Sliders extends Component {
 
   componentDidMount() {
     const slider = this.refs.sliderWithValue;
@@ -66,11 +81,9 @@ class Sliders extends Component {
           <View style={styles.col}>
             <SliderWithValue
               ref="sliderWithValue"
-              onChange={(curValue) => this.setState({curValue})}
+              onChange={(curValue) => this.refs.valueText.onChange(curValue)}
               />
-            <Text style={styles.legendLabel}>
-              {this.state.curValue.toFixed(2)} (10~100)
-            </Text>
+            <ValueText ref="valueText" rangeText="10~100" />
           </View>
         </View>
       </View>

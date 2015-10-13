@@ -18,10 +18,11 @@ var {
 } = React;
 
 var Buttons = require('./app/buttons');
-// var TextFields = require('./app/textfields');
-// var Toggles = require('./app/toggles');
-// var Progress = require('./app/progress');
+var TextFields = require('./app/textfields');
+var Toggles = require('./app/toggles');
+var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
+var Cards = require('./app/cards');
 
 var Home = React.createClass({
   render: function () {
@@ -38,11 +39,43 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
+            title: 'Cards',
+            component: Cards,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Cards</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            title: 'Loading',
+            component: Progress,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Loading</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
             name: 'Sliders',
             component: Sliders,
           });
         }}>
           <Text style={styles.pushLabel}>Sliders</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            name: 'Textfields',
+            component: TextFields,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Textfields</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.props.navigator.push({
+            name: 'Toggles',
+            component: Toggles,
+          });
+        }}>
+          <Text style={styles.pushLabel}>Toggles</Text>
         </TouchableOpacity>
       </ScrollView>
     );

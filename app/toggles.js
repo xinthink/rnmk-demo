@@ -12,14 +12,13 @@ const {
   Text,
   View,
   ScrollView,
-  PixelRatio,
 } = React;
 
 const {
   MKIconToggle,
   MKSwitch,
+  MKRadioButton,
   MKColor,
-  mdl,
   getTheme,
   setTheme,
 } = MK;
@@ -36,8 +35,6 @@ const {
 //   rippleColor: 'rgba(139,195,74,.2)',
 // });
 
-const toPx = PixelRatio.getPixelSizeForLayoutSize.bind(PixelRatio);
-
 const styles = Object.assign(appStyles, StyleSheet.create({
   toggleText: {
     fontSize: 16,
@@ -49,14 +46,12 @@ const styles = Object.assign(appStyles, StyleSheet.create({
     color: getTheme().primaryColor,
   },
   switch: {
-    marginTop: toPx(5),
-    marginBottom: toPx(5),
+    marginTop: 2,
+    // marginBottom: 5,
   },
   appleSwitch: {
-    width: toPx(26),
-    height: toPx(15),
-    marginTop: toPx(2),
-    marginBottom: toPx(5),
+    marginTop: 7,
+    marginBottom: 7,
   },
 }));
 
@@ -67,6 +62,11 @@ const CheckedIconToggle = MKIconToggle.toggle()
   .build();
 
 class Toggles extends Component {
+  constructor() {
+    super();
+    this.radioGroup = new MKRadioButton.Group();
+  }
+
   _onChecked(event) {
     console.log(`icon toggle is checked? ${event.checked}`);
   }
@@ -83,34 +83,31 @@ class Toggles extends Component {
           <View style={styles.col}>
             <CheckedIconToggle>
               <Text state_checked={true}
-                    pointerEvents="none"
                     style={[styles.toggleText, styles.toggleOnText]}>T</Text>
-              <Text pointerEvents="none"
-                    style={styles.toggleText}>T</Text>
+              <Text style={styles.toggleText}>T</Text>
             </CheckedIconToggle>
             <Text style={styles.legendLabel}>Icon on</Text>
           </View>
           <View style={styles.col}>
             <MKIconToggle>
               <Text state_checked={true}
-                    pointerEvents="none"
                     style={[styles.toggleText, styles.toggleOnText]}>B</Text>
-              <Text pointerEvents="none"
-                    style={styles.toggleText}>B</Text>
+              <Text style={styles.toggleText}>B</Text>
             </MKIconToggle>
             <Text style={styles.legendLabel}>Icon off</Text>
           </View>
         </View>
-        <Text style={styles.legendLabel}>'Pure' JSX components</Text>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Switch checked={true}
+            <MKSwitch checked={true}
                         style={styles.switch}
             />
             <Text style={styles.legendLabel}>Switch on</Text>
           </View>
           <View style={styles.col}>
-            <mdl.Switch style={styles.appleSwitch}
+            <MKSwitch style={styles.appleSwitch}
+                        trackSize={30}
+                        trackLength={52}
                         onColor="rgba(255,152,0,.3)"
                         thumbOnColor={MKColor.Orange}
                         rippleColor="rgba(255,152,0,.2)"
@@ -118,6 +115,18 @@ class Toggles extends Component {
                         onCheckedChange={(e) => console.log('orange switch checked', e)}
               />
             <Text style={styles.legendLabel}>Switch off</Text>
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <MKRadioButton
+              checked={true}
+              group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>First</Text>
+          </View>
+          <View style={styles.col}>
+            <MKRadioButton group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>Second</Text>
           </View>
         </View>
       </ScrollView>

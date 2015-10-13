@@ -20,17 +20,11 @@ const {
   mdl,
 } = MK;
 
-const toPx = PixelRatio.getPixelSizeForLayoutSize.bind(PixelRatio);
-
 const styles = Object.assign(appStyles, StyleSheet.create({
   textfield: {
-    width: 100,
-    height: 28,
     marginTop: 22,
   },
   textfieldWithFloatingLabel: {
-    width: 100,
-    height: toPx(20),
     marginTop: 10,
   },
 }));
@@ -62,6 +56,7 @@ const PasswordInput = mdl.Textfield.textfieldWithFloatingLabel()
   .withPassword(true)
   .withPlaceholder('Password')
   .withDefaultValue('!123')
+  .withHighlightColor(MKColor.Lime)
   .withStyle(styles.textfieldWithFloatingLabel)
   .withOnFocus(() => console.log('Focus'))
   .withOnBlur(() => console.log('Blur'))
