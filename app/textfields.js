@@ -21,10 +21,19 @@ const {
 } = MK;
 
 const styles = Object.assign(appStyles, StyleSheet.create({
+  col: {
+    flex: 1,
+    flexDirection: 'column',
+    // alignItems: 'center', // this will prevent TFs from stretching horizontal
+    marginLeft: 7, marginRight: 7,
+    // backgroundColor: MKColor.Lime,
+  },
   textfield: {
+    height: 28,  // have to do it on iOS
     marginTop: 22,
   },
   textfieldWithFloatingLabel: {
+    height: 38,  // have to do it on iOS
     marginTop: 10,
   },
 }));
