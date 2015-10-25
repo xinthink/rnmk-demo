@@ -1,7 +1,7 @@
 # react-native-material-kit demo
 
 ## RNMK resources
-- [GitHub][gh]
+- [GitHub][RNMK]
 - [Docs (annotated source)][docs]
 - [Change logs][releases]
 
