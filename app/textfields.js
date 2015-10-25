@@ -20,7 +20,7 @@ const {
   mdl,
 } = MK;
 
-const styles = Object.assign(appStyles, StyleSheet.create({
+const styles = Object.assign({}, appStyles, StyleSheet.create({
   col: {
     flex: 1,
     flexDirection: 'column',
