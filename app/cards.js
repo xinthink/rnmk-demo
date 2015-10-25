@@ -47,11 +47,13 @@ const Cards = React.createClass({
             <Image source={{uri : base64Icon}} style={MKCardStyles.image}/>
             <Text style={MKCardStyles.title}>Welcome</Text>
             <View  // TextView padding not handled well on Android https://github.com/facebook/react-native/issues/3233
-              style={MKCardStyles.content}
+              style={{
+                padding : 15,
+              }}
               >
-              <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Mauris sagittis pellentesque lacus eleifend lacinia...
+              <Text style={[MKCardStyles.content, {padding:0}]}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sagittis pellentesque lacus eleifend lacinia...
               </Text>
             </View>
             <View style={MKCardStyles.menu}>{menu}</View>
