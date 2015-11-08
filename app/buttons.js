@@ -25,7 +25,7 @@ const {
 //   accentColor: MKColor.Purple,
 // });
 
-const styles = Object.assign(appStyles, StyleSheet.create({
+const styles = Object.assign({}, appStyles, StyleSheet.create({
   buttonText: {
     fontSize: 14,
     fontWeight: 'bold',

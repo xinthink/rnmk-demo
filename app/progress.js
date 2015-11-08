@@ -17,7 +17,7 @@ const {
   mdl,
 } = MK;
 
-const styles = Object.assign(appStyles, StyleSheet.create({
+const styles = Object.assign({}, appStyles, StyleSheet.create({
   progress: {
     width: 150,
     //height: 2,
