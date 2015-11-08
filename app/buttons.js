@@ -93,19 +93,19 @@ const Buttons = React.createClass({
         <View style={styles.row}>
           <View style={styles.col}>
             <PlainFab>
-              <Image pointerEvents="none" source={require('image!plus_dark')} />
+              <Image pointerEvents="none" source={require('../img/plus_dark.png')} />
             </PlainFab>
             <Text style={styles.legendLabel}>Plain FAB</Text>
           </View>
           <View style={styles.col}>
             <ColoredFab>
-              <Image pointerEvents="none" source={require('image!plus_white')} />
+              <Image pointerEvents="none" source={require('../img/plus_white.png')} />
             </ColoredFab>
             <Text style={styles.legendLabel}>Colored</Text>
           </View>
           <View style={styles.col}>
             <AccentColoredFab>
-              <Image pointerEvents="none" source={require('image!plus_white')} />
+              <Image pointerEvents="none" source={require('../img/plus_white.png')} />
             </AccentColoredFab>
             <Text style={styles.legendLabel}>Accent colored</Text>
           </View>
