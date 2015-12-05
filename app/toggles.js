@@ -29,13 +29,14 @@ const {
 //   accentColor: MKColor.Purple,
 // });
 
-// Object.assign(getTheme().toggleTheme, {
-//   onColor: 'rgba(76,175,80,.4)',
-//   thumbOnColor: 'rgb(76,175,80)',
-//   rippleColor: 'rgba(139,195,74,.2)',
-// });
+setTheme({radioStyle: {
+  fillColor: `rgba(${MKColor.RGBTeal},.8)`,
+  borderOnColor: `rgba(${MKColor.RGBTeal},.6)`,
+  borderOffColor: `rgba(${MKColor.RGBTeal},.3)`,
+  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+}});
 
-const styles = Object.assign(appStyles, StyleSheet.create({
+const styles = Object.assign({}, appStyles, StyleSheet.create({
   toggleText: {
     fontSize: 16,
     fontStyle: 'italic',
@@ -55,7 +56,7 @@ const styles = Object.assign(appStyles, StyleSheet.create({
   },
 }));
 
-const CheckedIconToggle = MKIconToggle.toggle()
+const CheckedIconToggle = MKIconToggle.builder()
   .withChecked(true)
   .withOnCheckedChange(this._onChecked)
   .withOnPress(this._onToggleClicked)

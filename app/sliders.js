@@ -24,7 +24,7 @@ const {
 //   primaryColor: MKColor.Orange,
 // });
 
-const styles = Object.assign(appStyles, StyleSheet.create({
+const styles = Object.assign({}, appStyles, StyleSheet.create({
   slider: {
     width: 130,
   },
