@@ -18,6 +18,7 @@ const {
   MKIconToggle,
   MKSwitch,
   MKRadioButton,
+  MKCheckbox,
   MKColor,
   getTheme,
   setTheme,
@@ -33,6 +34,13 @@ setTheme({radioStyle: {
   fillColor: `rgba(${MKColor.RGBTeal},.8)`,
   borderOnColor: `rgba(${MKColor.RGBTeal},.6)`,
   borderOffColor: `rgba(${MKColor.RGBTeal},.3)`,
+  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+}});
+
+setTheme({checkboxStyle: {
+  fillColor: MKColor.Teal,
+  borderOnColor: MKColor.Teal,
+  borderOffColor: MKColor.Teal,
   rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
 }});
 
@@ -122,12 +130,27 @@ class Toggles extends Component {
           <View style={styles.col}>
             <MKRadioButton
               checked={true}
-              group={this.radioGroup}/>
+              group={this.radioGroup}
+              />
             <Text style={styles.legendLabel}>First</Text>
           </View>
           <View style={styles.col}>
             <MKRadioButton group={this.radioGroup}/>
             <Text style={styles.legendLabel}>Second</Text>
+          </View>
+          <View style={styles.col}>
+            <MKRadioButton group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>Three</Text>
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <MKCheckbox checked={true} />
+            <Text style={styles.legendLabel}>Checked</Text>
+          </View>
+          <View style={styles.col}>
+            <MKCheckbox />
+            <Text style={styles.legendLabel}>Unchecked</Text>
           </View>
         </View>
       </ScrollView>
