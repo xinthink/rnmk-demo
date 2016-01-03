@@ -15,6 +15,7 @@ var {
   Navigator,
   // ToolbarAndroid,
   TouchableOpacity,
+  BackAndroid,
 } = React;
 
 var Buttons = require('./app/buttons');
@@ -31,7 +32,7 @@ var Home = React.createClass({
                   contentContainerStyle={styles.container}>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            title: 'Buttons',
+            name: 'Buttons',
             component: Buttons,
           });
         }}>
@@ -39,7 +40,7 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            title: 'Cards',
+            name: 'Cards',
             component: Cards,
           });
         }}>
@@ -47,7 +48,7 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            title: 'Loading',
+            name: 'Loading',
             component: Progress,
           });
         }}>
@@ -84,6 +85,7 @@ var Home = React.createClass({
 
 var Example = React.createClass({
   _renderScene: function (route, navigator) {
+    this.navigator = navigator;
     switch (route.name) {
       case 'Examples':
         return <Home navigator={navigator}/>;
@@ -104,6 +106,27 @@ var Example = React.createClass({
       //     </View>
       //   );
     }
+  },
+
+  hardwareBackPress: function () {
+    var currentRoutes = this.navigator.getCurrentRoutes();
+    // example: [ { name: 'Examples' }, { name: 'Cards' } ]
+    if (currentRoutes[currentRoutes.length - 1].name !== 'Examples') {
+      // if not on main screen
+      // go back to main screen
+      this.navigator.popToTop();
+      return true;
+    }
+    // else minimize the application
+    return false;
+  },
+
+  componentWillMount: function () {
+    BackAndroid.addEventListener('hardwareBackPress', this.hardwareBackPress);
+  },
+
+  componentWillUnmount: function () {
+    BackAndroid.removeEventListener('hardwareBackPress', this.hardwareBackPress);
   },
 
   render: function () {
