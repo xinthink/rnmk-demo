@@ -138,10 +138,6 @@ class Toggles extends Component {
             <MKRadioButton group={this.radioGroup}/>
             <Text style={styles.legendLabel}>Second</Text>
           </View>
-          <View style={styles.col}>
-            <MKRadioButton group={this.radioGroup}/>
-            <Text style={styles.legendLabel}>Three</Text>
-          </View>
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
