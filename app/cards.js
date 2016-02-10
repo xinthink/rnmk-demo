@@ -1,7 +1,4 @@
 const React = require('react-native');
-const MK = require('react-native-material-kit');
-const appStyles = require('./styles');
-
 
 const {
   StyleSheet,
@@ -11,16 +8,15 @@ const {
   Image,
 } = React;
 
-const {
+import {
   MKButton,
   MKColor,
   MKIconToggle,
-  MKCardStyles
-} = MK;
+  getTheme,
+} from 'react-native-material-kit';
 
-const styles = Object.assign({}, appStyles, StyleSheet.create({
-
-}));
+const theme = getTheme();
+const styles = require('./styles');
 
 const Cards = React.createClass({
   render(){
@@ -43,21 +39,21 @@ const Cards = React.createClass({
       <ScrollView style={styles.scrollView}>
         <View style={styles.container}>
         {/* Here the magic happens*/}
-          <View style={MKCardStyles.card}>
-            <Image source={{uri : base64Icon}} style={MKCardStyles.image}/>
-            <Text style={MKCardStyles.title}>Welcome</Text>
+          <View style={theme.cardStyle}>
+            <Image source={{uri : base64Icon}} style={theme.cardImageStyle}/>
+            <Text style={theme.cardTitleStyle}>Welcome</Text>
             <View  // TextView padding not handled well on Android https://github.com/facebook/react-native/issues/3233
               style={{
                 padding : 15,
               }}
               >
-              <Text style={[MKCardStyles.content, {padding:0}]}>
+              <Text style={[theme.cardContentStyle, {padding:0}]}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Mauris sagittis pellentesque lacus eleifend lacinia...
               </Text>
             </View>
-            <View style={MKCardStyles.menu}>{menu}</View>
-            <View style={MKCardStyles.action}>
+            <View style={theme.cardMenuStyle}>{menu}</View>
+            <View style={theme.cardActionStyle}>
               <Text>My Action</Text>
             </View>
           </View>
@@ -65,6 +61,6 @@ const Cards = React.createClass({
       </ScrollView>
     )
   }
-})
+});
 
 module.exports = Cards;
