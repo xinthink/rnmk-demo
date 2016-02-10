@@ -3,7 +3,6 @@
  */
 
 const React = require('react-native');
-const MK = require('react-native-material-kit');
 const appStyles = require('./styles');
 
 const {
@@ -14,7 +13,7 @@ const {
   ScrollView,
 } = React;
 
-const {
+import {
   MKIconToggle,
   MKSwitch,
   MKRadioButton,
@@ -22,27 +21,28 @@ const {
   MKColor,
   getTheme,
   setTheme,
-} = MK;
-
-// customize the material design theme
+} from 'react-native-material-kit';
+//
+//// customize the material design theme
 // setTheme({
-//   primaryColor: MKColor.Teal,
-//   accentColor: MKColor.Purple,
+//   primaryColor: MKColor.Purple,
+//   primaryColorRGB: MKColor.RGBPurple,
+//   accentColor: MKColor.Amber,
 // });
 
-setTheme({radioStyle: {
-  fillColor: `rgba(${MKColor.RGBTeal},.8)`,
-  borderOnColor: `rgba(${MKColor.RGBTeal},.6)`,
-  borderOffColor: `rgba(${MKColor.RGBTeal},.3)`,
-  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
-}});
-
-setTheme({checkboxStyle: {
-  fillColor: MKColor.Teal,
-  borderOnColor: MKColor.Teal,
-  borderOffColor: MKColor.Teal,
-  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
-}});
+//setTheme({radioStyle: {
+//  fillColor: `rgba(${MKColor.RGBTeal},.8)`,
+//  borderOnColor: `rgba(${MKColor.RGBTeal},.6)`,
+//  borderOffColor: `rgba(${MKColor.RGBTeal},.3)`,
+//  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+//}});
+//
+//setTheme({checkboxStyle: {
+//  fillColor: MKColor.Teal,
+//  borderOnColor: MKColor.Teal,
+//  borderOffColor: MKColor.Teal,
+//  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+//}});
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   toggleText: {

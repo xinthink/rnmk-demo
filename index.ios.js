@@ -21,8 +21,17 @@ var TextFields = require('./app/textfields');
 var Toggles = require('./app/toggles');
 var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
-
 var Cards = require('./app/cards');
+
+import { setTheme, MKColor } from 'react-native-material-kit';
+
+// customize the material design theme
+setTheme({
+  primaryColor: MKColor.Purple,
+  primaryColorRGB: MKColor.RGBPurple,
+  accentColor: MKColor.Amber,
+});
+
 
 var Home = React.createClass({
   render: function () {
