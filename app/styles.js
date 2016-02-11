@@ -1,4 +1,4 @@
-var {StyleSheet} = require('react-native');
+var {StyleSheet, Platform} = require('react-native');
 var {MKColor} = require('react-native-material-kit');
 
 module.exports = StyleSheet.create({
@@ -10,6 +10,7 @@ module.exports = StyleSheet.create({
     alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
     padding: 20,
+    marginTop: Platform.OS === 'android' ? 56 : 0,
   },
   row: {
     flexDirection: 'row',

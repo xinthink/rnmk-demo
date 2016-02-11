@@ -13,8 +13,9 @@ var {
   Text,
   ScrollView,
   Navigator,
-  // ToolbarAndroid,
   TouchableOpacity,
+  ToolbarAndroid,
+  Navigator,
 } = React;
 
 var Buttons = require('./app/buttons');
@@ -33,6 +34,44 @@ setTheme({
   accentColor: MKColor.Amber,
 });
 
+function routes(route, navigator) {
+  //console.log('routing to:', route);
+  switch (route.name) {
+    case 'home':
+      return renderHome(navigator);
+    default:
+      return renderScreen(route, navigator);
+  }
+}
+
+function renderScreen(route, navigator) {
+  return (
+    <View style={styles.container}>
+      <route.component
+        {...route.passProps}
+        navigator={navigator}
+      />
+      <ToolbarAndroid
+        style={styles.toolbar}
+        title={route.title}
+        navIcon={require('./img/ic_back.png')}
+        onIconClicked={() => navigator.pop()}
+      />
+    </View>
+  );
+}
+
+function renderHome(navigator) {
+  return (
+    <View style={styles.container}>
+      <Home navigator={navigator} />
+      <ToolbarAndroid
+        style={styles.toolbar}
+        title="Examples"
+      />
+    </View>
+  );
+}
 
 var Home = React.createClass({
   render: function () {
@@ -65,7 +104,7 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            name: 'Sliders',
+            title: 'Sliders',
             component: Sliders,
           });
         }}>
@@ -73,7 +112,7 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            name: 'Textfields',
+            title: 'Textfields',
             component: TextFields,
           });
         }}>
@@ -81,7 +120,7 @@ var Home = React.createClass({
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
-            name: 'Toggles',
+            title: 'Toggles',
             component: Toggles,
           });
         }}>
@@ -93,34 +132,11 @@ var Home = React.createClass({
 });
 
 var Example = React.createClass({
-  _renderScene: function (route, navigator) {
-    switch (route.name) {
-      case 'Examples':
-        return <Home navigator={navigator}/>;
-      default:
-        return (
-          <route.component/>
-        );
-      // default:
-      //   return (
-      //     <View style={{flex: 1}}>
-      //       <ToolbarAndroid actions={[]}
-      //         title={route.name}
-      //         navIcon={require('image!ic_back')}
-      //         onIconClicked={navigator.pop}
-      //         style={styles.toolbar}
-      //       />
-      //       <route.component/>
-      //     </View>
-      //   );
-    }
-  },
-
   render: function () {
     return (
       <Navigator
-        initialRoute={{name: 'Examples'}}
-        renderScene={this._renderScene}
+        initialRoute={{name: 'home'}}
+        renderScene={routes}
         />
     );
   },
@@ -128,16 +144,20 @@ var Example = React.createClass({
 
 var styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: '#a9a9a9',
+    backgroundColor: 'rgba(245,252,255,.98)',
     height: 56,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
   },
   list: {
     backgroundColor: '#F5FCFF',
-    paddingTop: 20,
+    paddingTop: 64,
   },
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
   welcome: {
     fontSize: 20,
@@ -152,6 +172,7 @@ var styles = StyleSheet.create({
   pushLabel: {
     padding: 10,
     color: '#2196F3',
+    textAlign: 'center',
   },
 });
 
