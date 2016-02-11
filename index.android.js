@@ -18,13 +18,6 @@ var {
   Navigator,
 } = React;
 
-var Buttons = require('./app/buttons');
-var TextFields = require('./app/textfields');
-var Toggles = require('./app/toggles');
-var Progress = require('./app/progress');
-var Sliders = require('./app/sliders');
-var Cards = require('./app/cards');
-
 import { setTheme, MKColor } from 'react-native-material-kit';
 
 // customize the material design theme
@@ -33,6 +26,13 @@ setTheme({
   primaryColorRGB: MKColor.RGBPurple,
   accentColor: MKColor.Amber,
 });
+
+var Buttons = require('./app/buttons');
+var TextFields = require('./app/textfields');
+var Toggles = require('./app/toggles');
+var Progress = require('./app/progress');
+var Sliders = require('./app/sliders');
+var Cards = require('./app/cards');
 
 function routes(route, navigator) {
   //console.log('routing to:', route);
