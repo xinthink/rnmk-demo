@@ -16,6 +16,7 @@ var {
   TouchableOpacity,
   ToolbarAndroid,
   Navigator,
+  BackAndroid,
 } = React;
 
 import { setTheme, MKColor } from 'react-native-material-kit';
@@ -33,16 +34,6 @@ var Toggles = require('./app/toggles');
 var Progress = require('./app/progress');
 var Sliders = require('./app/sliders');
 var Cards = require('./app/cards');
-
-function routes(route, navigator) {
-  //console.log('routing to:', route);
-  switch (route.name) {
-    case 'home':
-      return renderHome(navigator);
-    default:
-      return renderScreen(route, navigator);
-  }
-}
 
 function renderScreen(route, navigator) {
   return (
@@ -132,11 +123,47 @@ var Home = React.createClass({
 });
 
 var Example = React.createClass({
+
+  routes: function (route, navigator) {
+    this.navigator = navigator;
+    //console.log('routing to:', route);
+    switch (route.name) {
+      case 'home':
+        return renderHome(navigator);
+      default:
+        return renderScreen(route, navigator);
+    }
+  },
+
+  hardwareBackPress: function () {
+    if (!this.navigator) {
+      return false;
+    }
+
+    var currentRoutes = this.navigator.getCurrentRoutes();
+    if (currentRoutes[currentRoutes.length - 1].name !== 'home') {
+      // if not on main screen
+      // go back to main screen
+      this.navigator.popToTop();
+      return true;
+    }
+    // else minimize the application
+    return false;
+  },
+
+  componentWillMount: function () {
+    BackAndroid.addEventListener('hardwareBackPress', this.hardwareBackPress);
+  },
+
+  componentWillUnmount: function () {
+    BackAndroid.removeEventListener('hardwareBackPress', this.hardwareBackPress);
+  },
+
   render: function () {
     return (
       <Navigator
         initialRoute={{name: 'home'}}
-        renderScene={routes}
+        renderScene={this.routes}
         />
     );
   },
