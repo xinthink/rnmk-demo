@@ -13,11 +13,12 @@ const {
   ScrollView,
 } = React;
 
-const {
+import {
   MKColor,
-  mdl,
+  MKSlider,
+  MKRangeSlider,
   setTheme,
-} = require('react-native-material-kit');
+} from 'react-native-material-kit';
 
 // customize the material design theme
 // setTheme({
@@ -30,19 +31,6 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
 }));
 
-const SliderWithValue = mdl.Slider.slider()
-  .withStyle(styles.slider)
-  .withMin(10)
-  .withMax(100)
-  .build();
-
-const RangeSlider = mdl.RangeSlider.slider()
-  .withStyle(styles.slider)
-  .withMin(10)
-  .withMax(100)
-  .withMinValue(20)
-  .withMaxValue(75)
-  .build();
 
 class ValueText extends Component {
   constructor(props) {
@@ -86,12 +74,16 @@ class Sliders extends Component {
             contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Slider style={styles.slider}/>
+            <MKSlider style={styles.slider}
+            />
             <Text style={styles.legendLabel}>Slider</Text>
           </View>
           <View style={styles.col}>
-            <SliderWithValue
+            <MKSlider
               ref="sliderWithValue"
+              min={10}
+              max={100}
+              style={styles.slider}
               onChange={(curValue) => this.refs.valueText.onChange(curValue.toFixed(2))}
               />
             <ValueText ref="valueText" rangeText="10~100" />
@@ -99,12 +91,17 @@ class Sliders extends Component {
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.RangeSlider style={styles.slider}/>
+            <MKRangeSlider style={styles.slider}/>
             <Text style={styles.legendLabel}>Range Slider</Text>
           </View>
           <View style={styles.col}>
-            <RangeSlider
+            <MKRangeSlider
               ref="rangeSlider"
+              min={10}
+              max={100}
+              minValue={20}
+              maxValue={75}
+              style={styles.slider}
               onChange={(curValue) => this.refs.rangeValueText.onChange(curValue.min.toFixed(2) + '-' + curValue.max.toFixed(2))}
               />
             <ValueText ref="rangeValueText" initial="20.00-75.00" rangeText="10~100" />

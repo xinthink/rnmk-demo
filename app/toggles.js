@@ -64,11 +64,6 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
 }));
 
-const CheckedIconToggle = MKIconToggle.builder()
-  .withChecked(true)
-  .withOnCheckedChange(this._onChecked)
-  .withOnPress(this._onToggleClicked)
-  .build();
 
 class Toggles extends Component {
   constructor() {
@@ -90,11 +85,15 @@ class Toggles extends Component {
                   contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
-            <CheckedIconToggle>
+            <MKIconToggle
+              checked={true}
+              onCheckedChange={this._onChecked}
+              onPress={this._onToggleClicked}
+            >
               <Text state_checked={true}
                     style={[styles.toggleText, styles.toggleOnText]}>T</Text>
               <Text style={styles.toggleText}>T</Text>
-            </CheckedIconToggle>
+            </MKIconToggle>
             <Text style={styles.legendLabel}>Icon on</Text>
           </View>
           <View style={styles.col}>

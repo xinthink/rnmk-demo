@@ -3,7 +3,6 @@
  */
 
 const React = require('react-native');
-const MK = require('react-native-material-kit');
 const appStyles = require('./styles');
 
 const {
@@ -14,11 +13,11 @@ const {
   PixelRatio,
 } = React;
 
-const {
+import {
   MKTextField,
   MKColor,
   mdl,
-} = MK;
+} from 'react-native-material-kit';
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   col: {

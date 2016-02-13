@@ -3,7 +3,6 @@
  */
 
 const React = require('react-native');
-const MK = require('react-native-material-kit');
 const appStyles = require('./styles');
 
 const {
@@ -13,9 +12,10 @@ const {
   ScrollView,
 } = React;
 
-const {
-  mdl,
-} = MK;
+import {
+  MKProgress,
+  MKSpinner,
+} from 'react-native-material-kit';
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   progress: {
@@ -28,11 +28,7 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
 }));
 
-const Indeterminate = mdl.Progress.indeterminateProgress()
-  .withStyle(styles.progress)
-  .build();
-
-const SingleColorSpinner = mdl.Spinner.singleColorSpinner()
+const SingleColorSpinner = MKSpinner.singleColorSpinner()
   .withStyle(styles.spinner)
   .build();
 
@@ -57,7 +53,7 @@ const Progress = React.createClass({
                   contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Progress
+            <MKProgress
               ref="progBar"
               style={styles.progress}
               progress={0.2}
@@ -67,13 +63,15 @@ const Progress = React.createClass({
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <Indeterminate/>
+            <MKProgress.Indeterminate
+              style={styles.progress}
+            />
             <Text style={styles.legendLabel}>Indeterminate</Text>
           </View>
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Progress
+            <MKProgress
               ref="progBarWithBuffer"
               style={styles.progress}
               progress={0.2}
@@ -84,7 +82,7 @@ const Progress = React.createClass({
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <mdl.Spinner style={styles.spinner}/>
+            <MKSpinner style={styles.spinner}/>
             <Text style={styles.legendLabel}>Default spinner</Text>
           </View>
           <View style={styles.col}>
