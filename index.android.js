@@ -15,7 +15,6 @@ var {
   Navigator,
   TouchableOpacity,
   ToolbarAndroid,
-  Navigator,
   BackAndroid,
 } = React;
 
