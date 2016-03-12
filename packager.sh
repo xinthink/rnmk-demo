@@ -6,7 +6,7 @@ solveRNMK() {
 
   if [[ -L "$DIR" ]];
   then
-    RNMK_PATH=`readlink $DIR`
+    RNMK_PATH=`readlink -f $DIR`
     if [[ -L "$RNMK_PATH" ]];
     then
       solveRNMK "$RNMK_PATH"
