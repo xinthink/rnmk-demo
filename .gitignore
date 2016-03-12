@@ -22,27 +22,14 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# Android/IJ
+#
+.idea
+*.iml
+.gradle
+local.properties
+
 # node.js
 #
 node_modules/
 npm-debug.log
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-
-# Gradle
-#
-build
-.gradle
-
-# WebStorm
-#
-.idea
-*.iml
-
-local.properties
