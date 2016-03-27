@@ -25,6 +25,9 @@ solveRNMK() {
 
 solveRNMK "$RNMK_DIR"
 
+# Resolve module name conflicts
+rm -rf node_modules/react-native/ReactAndroid/build/intermediates
+
 cd node_modules/react-native/packager
 if [ $RNMK_PATH ];
 then

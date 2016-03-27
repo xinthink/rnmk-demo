@@ -76,7 +76,11 @@ const PasswordInput = mdl.Textfield.textfieldWithFloatingLabel()
 
 const TextFields = React.createClass({
   componentDidMount: function() {
-    this.refs.defaultInput.focus();
+    setTimeout((() => {
+      if (this.refs.defaultInput) {
+        this.refs.defaultInput.focus();
+      }
+    }), 1000);
   },
 
   render: function() {
