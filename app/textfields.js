@@ -29,10 +29,10 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
   textfield: {
     height: 28,  // have to do it on iOS
-    marginTop: 22,
+    marginTop: 32,
   },
   textfieldWithFloatingLabel: {
-    height: 38,  // have to do it on iOS
+    height: 48,  // have to do it on iOS
     marginTop: 10,
   },
 }));
