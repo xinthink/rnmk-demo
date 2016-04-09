@@ -59,7 +59,6 @@ class Sliders extends Component {
     const slider = this.refs.sliderWithValue;
     const ranged = this.refs.rangeSlider;
 
-    slider.value = 25;
     setTimeout((() => {
       slider.value = 75;
       ranged.maxValue = 95;
@@ -83,10 +82,11 @@ class Sliders extends Component {
               ref="sliderWithValue"
               min={10}
               max={100}
+              value={25}
               style={styles.slider}
               onChange={(curValue) => this.refs.valueText.onChange(curValue.toFixed(2))}
               />
-            <ValueText ref="valueText" rangeText="10~100" />
+            <ValueText ref="valueText" initial="25.00" rangeText="10~100" />
           </View>
         </View>
         <View style={styles.row}>
