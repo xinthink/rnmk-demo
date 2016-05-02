@@ -98,10 +98,19 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        rnmk {
+            storeFile file("rnmk.keystore")
+            storePassword "rnmk-demo"
+            keyAlias "rnmk-demo"
+            keyPassword "rnmk-demo"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.rnmk
         }
     }
     // applicationVariants are e.g. debug, release
