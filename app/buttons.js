@@ -2,17 +2,17 @@
  * Created by ywu on 15/7/16.
  */
 
-const React = require('react-native');
+import React from 'react';
 const MK = require('react-native-material-kit');
 const appStyles = require('./styles');
 
-const {
+import {
   StyleSheet,
   Text,
   View,
   ScrollView,
   Image,
-} = React;
+} from 'react-native';
 
 const {
   MKButton,

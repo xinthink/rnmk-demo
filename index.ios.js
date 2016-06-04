@@ -4,9 +4,9 @@
  */
 'use strict';
 
-var React = require('react-native');
+import React from 'react';
 
-var {
+import {
   AppRegistry,
   StyleSheet,
   Text,
@@ -14,7 +14,7 @@ var {
   ScrollView,
   NavigatorIOS,
   TouchableOpacity,
-} = React;
+} from 'react-native';
 
 import { setTheme, MKColor } from 'react-native-material-kit';
 

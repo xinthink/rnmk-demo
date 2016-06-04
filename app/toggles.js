@@ -2,16 +2,15 @@
  * Created by ywu on 15/7/24.
  */
 
-const React = require('react-native');
+import React, { Component } from 'react';
 const appStyles = require('./styles');
 
-const {
-  Component,
+import {
   StyleSheet,
   Text,
   View,
   ScrollView,
-} = React;
+} from 'react-native';
 
 import {
   MKIconToggle,

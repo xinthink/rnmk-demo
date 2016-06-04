@@ -2,15 +2,15 @@
  * Created by ywu on 15/8/13.
  */
 
-const React = require('react-native');
+import React from 'react';
 const appStyles = require('./styles');
 
-const {
+import {
   StyleSheet,
   Text,
   View,
   ScrollView,
-} = React;
+} from 'react-native';
 
 import {
   MKProgress,

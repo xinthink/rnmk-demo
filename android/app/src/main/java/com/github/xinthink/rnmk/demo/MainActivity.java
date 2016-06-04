@@ -9,7 +9,7 @@ import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends ReactActivity implements DefaultHardwareBackBtnHandler {
+public class MainActivity extends ReactActivity {
 
     /**
      * Returns the name of the main component registered from JavaScript.

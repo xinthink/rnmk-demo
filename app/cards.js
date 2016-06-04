@@ -1,12 +1,12 @@
-const React = require('react-native');
+import React from 'react';
 
-const {
+import {
   StyleSheet,
   Text,
   View,
   ScrollView,
   Image,
-} = React;
+} from 'react-native';
 
 import {
   MKButton,
