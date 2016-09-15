@@ -1,8 +1,11 @@
 package com.github.xinthink.rnmk.demo;
 
+import android.support.annotation.NonNull;
+
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 
@@ -16,28 +19,30 @@ public class MainActivity extends ReactActivity {
      * This is used to schedule rendering of the component.
      */
     @Override
-    protected String getMainComponentName() {
+    protected @NonNull String getMainComponentName() {
         return "Example";
     }
 
-    /**
-     * Returns whether dev mode should be enabled.
-     * This enables e.g. the dev menu.
-     */
     @Override
-    protected boolean getUseDeveloperSupport() {
-        return BuildConfig.DEBUG;
-    }
+    protected ReactActivityDelegate createReactActivityDelegate() {
+        return new ReactActivityDelegate(this, getMainComponentName()) {
+            @Override
+            protected ReactNativeHost getReactNativeHost() {
+                return new ReactNativeHost(getApplication()) {
+                    @Override
+                    protected boolean getUseDeveloperSupport() {
+                        return BuildConfig.DEBUG;
+                    }
 
-    /**
-     * A list of packages used by the app. If the app uses additional views
-     * or modules besides the default ones, add more packages here.
-     */
-    @Override
-    protected List<ReactPackage> getPackages() {
-        return Arrays.asList(
-                new MainReactPackage(),
-                new ReactMaterialKitPackage()
-        );
+                    @Override
+                    protected List<ReactPackage> getPackages() {
+                        return Arrays.asList(
+                                new MainReactPackage(),
+                                new ReactMaterialKitPackage()
+                        );
+                    }
+                };
+            }
+        };
     }
 }

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+BASE_DIR=$(cd `dirname $0`/.. && pwd)
+cd $BASE_DIR
 RNMK_DIR="node_modules/react-native-material-kit"
 
 case `uname` in

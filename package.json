@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "./packager.sh",
+    "start": "./scripts/packager.sh",
     "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S"
   },
   "dependencies": {
-    "react": "^15.0.2",
-    "react-native": "^0.26.3",
+    "react": "~15.3.1",
+    "react-native": "~0.33.0",
     "react-native-material-kit": "0.x"
   }
 }
