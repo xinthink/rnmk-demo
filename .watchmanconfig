@@ -1,9 +1,11 @@
 {
   "ignore_dirs": [
     ".git",
+    ".*",
     ".idea",
-    "build",
+    "*/build",
     "android",
-    "iOS"
+    "iOS",
+    "gradle",
   ]
 }

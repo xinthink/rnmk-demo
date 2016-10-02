@@ -24,8 +24,8 @@ project.xcworkspace
 
 # Android/IJ
 #
-.idea
 *.iml
+.idea
 .gradle
 local.properties
 
