@@ -132,6 +132,9 @@ android {
             }
         }
     }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 }
 
 dependencies {
