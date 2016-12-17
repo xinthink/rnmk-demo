@@ -29,6 +29,10 @@ project.xcworkspace
 .gradle
 local.properties
 
+# VS Code
+.vscode
+jsconfig.json
+
 # node.js
 #
 node_modules/
