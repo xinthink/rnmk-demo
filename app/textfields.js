@@ -40,11 +40,13 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
 const Textfield = MKTextField.textfield()
   .withPlaceholder('Text...')
   .withStyle(styles.textfield)
+  .withTextInputStyle({flex: 1})
   .build();
 
 const TextfieldWithFloatingLabel = MKTextField.textfieldWithFloatingLabel()
   .withPlaceholder('Number...')
   .withStyle(styles.textfieldWithFloatingLabel)
+  .withTextInputStyle({flex: 1})
   .withFloatingLabelFont({
     fontSize: 10,
     fontStyle: 'italic',
@@ -57,7 +59,7 @@ const ColoredTextfield = mdl.Textfield.textfield()
   .withPlaceholder('Text...')
   .withStyle(styles.textfield)
   .withTintColor(MKColor.Lime)
-  .withTextInputStyle({color: MKColor.Orange})
+  .withTextInputStyle({color: MKColor.Orange, flex: 1})
   .build();
 
 const PasswordInput = mdl.Textfield.textfieldWithFloatingLabel()
@@ -66,6 +68,7 @@ const PasswordInput = mdl.Textfield.textfieldWithFloatingLabel()
   .withDefaultValue('!123')
   .withHighlightColor(MKColor.Lime)
   .withStyle(styles.textfieldWithFloatingLabel)
+  .withTextInputStyle({flex: 1})
   .withOnFocus(() => console.log('Focus'))
   .withOnBlur(() => console.log('Blur'))
   .withOnEndEditing((e) => console.log('EndEditing', e.nativeEvent.text))
