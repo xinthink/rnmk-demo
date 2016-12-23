@@ -5,16 +5,20 @@
 - [Docs (annotated source)][docs]
 - [Change logs][releases]
 
-## Debugging local RNMK module
+## Running the demo
 
 - Checkout [RNMK Demo] and [RNMK]
-- Link your local RNMK module to the demo project
+- Clone the project and run npm install
   ```sh
+  git clone https://github.com/xinthink/rnmk-demo.git
   cd rnmk-demo
-  npm link <local-rnmk-path>
   npm install
 
   ```
+- iOS Steps
+  - Open the iOS/RNMKDemo.xcodeproj file in Xcode
+  - Drag the file `node_modules/react-native-material-kit/iOS/RCTMaterialKit.codeproj` to the Libraries folder
+  - Expand the `RCTMaterialKit.xcodeproj > Products` under Libraries and drag the `libRCTMaterialKit.a` to the the top of the list of Linked Frameworks and Libraries.
 - Launch the packager
   - RN's packager [doesn't resolve symbolic links], so you have to use the command `npm start` or `./packager.sh` to start the packager
 - And then run the rnmk-demo Xcode project
