@@ -1,7 +1,7 @@
 var {StyleSheet, Platform} = require('react-native');
 var {MKColor} = require('react-native-material-kit');
 
-module.exports = StyleSheet.create({
+export default StyleSheet.create({
   scrollView: {
     flex: 1,
   },

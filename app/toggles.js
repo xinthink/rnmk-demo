@@ -3,8 +3,6 @@
  */
 
 import React, { Component } from 'react';
-const appStyles = require('./styles');
-
 import {
   StyleSheet,
   Text,
@@ -21,6 +19,8 @@ import {
   getTheme,
   setTheme,
 } from 'react-native-material-kit';
+
+import appStyles from './styles';
 //
 //// customize the material design theme
 // setTheme({
@@ -152,4 +152,4 @@ class Toggles extends Component {
   }
 }
 
-module.exports = Toggles;
+export default Toggles;

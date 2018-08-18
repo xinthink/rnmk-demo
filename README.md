@@ -7,15 +7,15 @@
 
 ## Debugging local RNMK module
 
-- Checkout [RNMK Demo] and [RNMK]
+- Checkout [RNMK Demo]
+- Clone [RNMK] into the *Libraries* directory (inside the demo project)
 - Link your local RNMK module to the demo project
   ```sh
-  cd <local-rnmk-path>
-  yarn link
-
   cd rnmk-demo
-  yarn link react-native-material-kit
-  yarn install
+  yarn
+
+  cd Libraries/react-native-material-kit
+  yarn
   ```
 - Commands
   - `npm start` to start the dev server

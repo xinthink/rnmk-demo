@@ -3,14 +3,11 @@
  */
 
 import React from 'react';
-const appStyles = require('./styles');
-
 import {
   StyleSheet,
   Text,
   View,
   ScrollView,
-  PixelRatio,
 } from 'react-native';
 
 import {
@@ -18,6 +15,8 @@ import {
   MKColor,
   mdl,
 } from 'react-native-material-kit';
+
+import appStyles from './styles';
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   col: {
@@ -77,19 +76,20 @@ const PasswordInput = mdl.Textfield.textfieldWithFloatingLabel()
   .withOnChangeText((e) => console.log('ChangeText', e))
   .build();
 
-const TextFields = React.createClass({
-  componentDidMount: function() {
-    setTimeout((() => {
+export default class extends React.Component {
+  componentDidMount() {
+    setTimeout(() => {
       if (this.refs.defaultInput) {
         this.refs.defaultInput.focus();
       }
-    }), 1000);
-  },
+    }, 1000);
+  }
 
-  render: function() {
-    return (
-      <ScrollView style={styles.scrollView}
-                  contentContainerStyle={styles.container}>
+  render = () => (
+      <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.container}
+      >
         <View style={styles.row}>
           <View style={styles.col}>
             <Textfield/>
@@ -111,8 +111,5 @@ const TextFields = React.createClass({
           </View>
         </View>
       </ScrollView>
-    );
-  },
-});
-
-module.exports = TextFields;
+  );
+}

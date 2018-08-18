@@ -5,12 +5,10 @@
 'use strict';
 
 import React from 'react';
-
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
   ScrollView,
   NavigatorIOS,
   TouchableOpacity,
@@ -25,87 +23,91 @@ setTheme({
   accentColor: MKColor.Amber,
 });
 
-var Buttons = require('./app/buttons');
-var TextFields = require('./app/textfields');
-var Toggles = require('./app/toggles');
-var Progress = require('./app/progress');
-var Sliders = require('./app/sliders');
-var Cards = require('./app/cards');
+import Buttons from './app/buttons';
+import TextFields from './app/textfields';
+import Toggles from './app/toggles';
+import Progress from './app/progress';
+import Sliders from './app/sliders';
+import Cards from './app/cards';
 
-var Home = React.createClass({
-  render: function () {
-   return (
-      <ScrollView style={styles.list}
-                  contentContainerStyle={styles.container}>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Buttons',
-            component: Buttons,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Buttons</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Cards',
-            component: Cards,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Cards</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Loading',
-            component: Progress,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Loading</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Sliders',
-            component: Sliders,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Sliders</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Text Fields',
-            component: TextFields,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Text Fields</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          this.props.navigator.push({
-            title: 'Toggles',
-            component: Toggles,
-          });
-        }}>
-          <Text style={styles.pushLabel}>Toggles</Text>
-        </TouchableOpacity>
-      </ScrollView>
-    );
+const Home = (props) => (
+  <ScrollView
+    style={styles.list}
+    contentContainerStyle={styles.container}
+  >
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Buttons',
+          component: Buttons,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Buttons</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Cards',
+          component: Cards,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Cards</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Loading',
+          component: Progress,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Loading</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Sliders',
+          component: Sliders,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Sliders</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Text Fields',
+          component: TextFields,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Text Fields</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigator.push({
+          title: 'Toggles',
+          component: Toggles,
+        })
+      }
+    >
+      <Text style={styles.pushLabel}>Toggles</Text>
+    </TouchableOpacity>
+  </ScrollView>
+)
 
-}
-});
+const Example = () =>
+  <NavigatorIOS
+    style={{flex: 1}}
+    initialRoute={{
+      component: Home,
+      title: 'Examples',
+    }}
+  />
 
-var Example = React.createClass({
-  render: function () {
-    return (
-      <NavigatorIOS
-        style={{flex:1}}
-        initialRoute={{
-          component: Home,
-          title: 'Examples',
-        }}
-      />
-    );
-  },
-});
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   list: {
     backgroundColor: '#F5FCFF',
     paddingTop: 20,
@@ -130,4 +132,4 @@ var styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Example', () => Example);
+AppRegistry.registerComponent('rnmk-demo', () => Example);

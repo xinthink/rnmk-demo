@@ -8,7 +8,7 @@ def resolve(File dir) {
 include ':app'
 
 include ':RNMaterialKit'
-project(':RNMaterialKit').projectDir = resolve file('../node_modules/react-native-material-kit/android')
+project(':RNMaterialKit').projectDir = resolve file('../Libraries/react-native-material-kit/android')
 
 //include ':ReactAndroid'
 //project(':ReactAndroid').projectDir = file('../node_modules/react-native/ReactAndroid')

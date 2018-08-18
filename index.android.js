@@ -5,18 +5,17 @@
 'use strict';
 
 import React from 'react';
-
 import {
   AppRegistry,
   StyleSheet,
   View,
   Text,
   ScrollView,
-  Navigator,
   TouchableOpacity,
   ToolbarAndroid,
-  BackAndroid,
+  BackHandler,
 } from 'react-native';
+import { Navigator } from 'react-native-deprecated-custom-components';
 
 import { setTheme, MKColor } from 'react-native-material-kit';
 
@@ -27,12 +26,12 @@ setTheme({
   accentColor: MKColor.Amber,
 });
 
-var Buttons = require('./app/buttons');
-var TextFields = require('./app/textfields');
-var Toggles = require('./app/toggles');
-var Progress = require('./app/progress');
-var Sliders = require('./app/sliders');
-var Cards = require('./app/cards');
+import Buttons from './app/buttons';
+import TextFields from './app/textfields';
+import Toggles from './app/toggles';
+import Progress from './app/progress';
+import Sliders from './app/sliders';
+import Cards from './app/cards';
 
 function renderScreen(route, navigator) {
   return (
@@ -63,11 +62,12 @@ function renderHome(navigator) {
   );
 }
 
-var Home = React.createClass({
-  render: function () {
-    return (
-      <ScrollView style={styles.list}
-                  contentContainerStyle={styles.container}>
+class Home extends React.Component {
+  render = () => (
+      <ScrollView
+          style={styles.list}
+          contentContainerStyle={styles.container}
+      >
         <TouchableOpacity onPress={() => {
           this.props.navigator.push({
             title: 'Buttons',
@@ -117,13 +117,12 @@ var Home = React.createClass({
           <Text style={styles.pushLabel}>Toggles</Text>
         </TouchableOpacity>
       </ScrollView>
-    );
-  },
-});
+  );
+}
 
-var Example = React.createClass({
+class Example extends React.Component {
 
-  routes: function (route, navigator) {
+  routes = (route, navigator) => {
     this.navigator = navigator;
     //console.log('routing to:', route);
     switch (route.name) {
@@ -132,14 +131,14 @@ var Example = React.createClass({
       default:
         return renderScreen(route, navigator);
     }
-  },
+  };
 
-  hardwareBackPress: function () {
+  hardwareBackPress = () => {
     if (!this.navigator) {
       return false;
     }
 
-    var currentRoutes = this.navigator.getCurrentRoutes();
+    const currentRoutes = this.navigator.getCurrentRoutes();
     if (currentRoutes[currentRoutes.length - 1].name !== 'home') {
       // if not on main screen
       // go back to main screen
@@ -148,27 +147,27 @@ var Example = React.createClass({
     }
     // else minimize the application
     return false;
-  },
+  };
 
-  componentWillMount: function () {
-    BackAndroid.addEventListener('hardwareBackPress', this.hardwareBackPress);
-  },
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.hardwareBackPress);
+  }
 
-  componentWillUnmount: function () {
-    BackAndroid.removeEventListener('hardwareBackPress', this.hardwareBackPress);
-  },
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.hardwareBackPress);
+  }
 
-  render: function () {
+  render() {
     return (
       <Navigator
         initialRoute={{name: 'home'}}
         renderScene={this.routes}
         />
     );
-  },
-});
+  }
+}
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   toolbar: {
     backgroundColor: 'rgba(245,252,255,.98)',
     height: 56,

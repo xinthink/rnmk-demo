@@ -3,13 +3,10 @@
  */
 
 import React, { Component } from 'react';
-const appStyles = require('./styles');
-
 import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
 } from 'react-native';
 
 import {
@@ -18,6 +15,8 @@ import {
   MKRangeSlider,
   setTheme,
 } from 'react-native-material-kit';
+
+import appStyles from './styles';
 
 // customize the material design theme
 // setTheme({
@@ -111,4 +110,4 @@ class Sliders extends Component {
   }
 }
 
-module.exports = Sliders;
+export default Sliders;

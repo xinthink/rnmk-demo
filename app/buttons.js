@@ -3,9 +3,6 @@
  */
 
 import React from 'react';
-const MK = require('react-native-material-kit');
-const appStyles = require('./styles');
-
 import {
   StyleSheet,
   Text,
@@ -14,13 +11,16 @@ import {
   Image,
 } from 'react-native';
 
-const {
+import {
   MKButton,
   MKColor,
-} = MK;
+  // setTheme,
+} from 'react-native-material-kit';
+
+import appStyles from './styles';
 
 // customize the material design theme
-// MK.setTheme({
+// setTheme({
 //   primaryColor: MKColor.Teal,
 //   accentColor: MKColor.Purple,
 // });
@@ -69,64 +69,58 @@ const PlainFab = MKButton.plainFab()
   .withStyle(styles.fab)
   .build();
 
-const Buttons = React.createClass({
-  render: function() {
-    return (
-      <ScrollView style={styles.scrollView}
-                  contentContainerStyle={styles.container}>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <PlainRaisedButton/>
-            <Text style={styles.legendLabel}>Raised button</Text>
-          </View>
-          <View style={styles.col}>
-            <ColoredRaisedButton/>
-            <Text style={styles.legendLabel}>Colored</Text>
-          </View>
-          <View style={styles.col}>
-            <AccentColoredRaisedButton>
-              <Text pointerEvents="none" style={styles.buttonText}>BUTTON</Text>
-            </AccentColoredRaisedButton>
-            <Text style={styles.legendLabel}>Accent colored</Text>
-          </View>
+export default () => (
+    <ScrollView style={styles.scrollView}
+                contentContainerStyle={styles.container}>
+      <View style={styles.row}>
+        <View style={styles.col}>
+          <PlainRaisedButton/>
+          <Text style={styles.legendLabel}>Raised button</Text>
         </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <PlainFab>
-              <Image pointerEvents="none" source={require('../img/plus_dark.png')} />
-            </PlainFab>
-            <Text style={styles.legendLabel}>Plain FAB</Text>
-          </View>
-          <View style={styles.col}>
-            <ColoredFab>
-              <Image pointerEvents="none" source={require('../img/plus_white.png')} />
-            </ColoredFab>
-            <Text style={styles.legendLabel}>Colored</Text>
-          </View>
-          <View style={styles.col}>
-            <AccentColoredFab>
-              <Image pointerEvents="none" source={require('../img/plus_white.png')} />
-            </AccentColoredFab>
-            <Text style={styles.legendLabel}>Accent colored</Text>
-          </View>
+        <View style={styles.col}>
+          <ColoredRaisedButton/>
+          <Text style={styles.legendLabel}>Colored</Text>
         </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <FlatButton/>
-            <Text style={styles.legendLabel}>Flat button</Text>
-          </View>
-          <View style={styles.col}>
-            <ColoredFlatButton/>
-            <Text style={styles.legendLabel}>Colored</Text>
-          </View>
-          <View style={styles.col}>
-            <AccentColoredFlatButton/>
-            <Text style={styles.legendLabel}>Accent colored</Text>
-          </View>
+        <View style={styles.col}>
+          <AccentColoredRaisedButton>
+            <Text pointerEvents="none" style={styles.buttonText}>BUTTON</Text>
+          </AccentColoredRaisedButton>
+          <Text style={styles.legendLabel}>Accent colored</Text>
         </View>
-      </ScrollView>
-    );
-  },
-});
-
-module.exports = Buttons;
+      </View>
+      <View style={styles.row}>
+        <View style={styles.col}>
+          <PlainFab>
+            <Image pointerEvents="none" source={require('../img/plus_dark.png')}/>
+          </PlainFab>
+          <Text style={styles.legendLabel}>Plain FAB</Text>
+        </View>
+        <View style={styles.col}>
+          <ColoredFab>
+            <Image pointerEvents="none" source={require('../img/plus_white.png')}/>
+          </ColoredFab>
+          <Text style={styles.legendLabel}>Colored</Text>
+        </View>
+        <View style={styles.col}>
+          <AccentColoredFab>
+            <Image pointerEvents="none" source={require('../img/plus_white.png')}/>
+          </AccentColoredFab>
+          <Text style={styles.legendLabel}>Accent colored</Text>
+        </View>
+      </View>
+      <View style={styles.row}>
+        <View style={styles.col}>
+          <FlatButton/>
+          <Text style={styles.legendLabel}>Flat button</Text>
+        </View>
+        <View style={styles.col}>
+          <ColoredFlatButton/>
+          <Text style={styles.legendLabel}>Colored</Text>
+        </View>
+        <View style={styles.col}>
+          <AccentColoredFlatButton/>
+          <Text style={styles.legendLabel}>Accent colored</Text>
+        </View>
+      </View>
+    </ScrollView>
+);

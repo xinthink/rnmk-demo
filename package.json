@@ -5,14 +5,15 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
+    "iosx": "npm run ios -- --simulator='iPhone X'",
     "android": "react-native run-android",
     "cli": "react-native",
     "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S"
   },
   "dependencies": {
-    "react": "~15.4.0-rc.4",
-    "react-native": "~0.39.0",
-    "react-native-material-kit": "0.x"
+    "react": "16.4.1",
+    "react-native": "~0.56.0",
+    "react-native-deprecated-custom-components": "^0.1.2"
   },
   "devDependencies": {
     "react-native-cli": "^2.0.1"

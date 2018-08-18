@@ -3,8 +3,6 @@
  */
 
 import React from 'react';
-const appStyles = require('./styles');
-
 import {
   StyleSheet,
   Text,
@@ -16,6 +14,8 @@ import {
   MKProgress,
   MKSpinner,
 } from 'react-native-material-kit';
+
+import appStyles from './styles';
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   progress: {
@@ -32,39 +32,38 @@ const SingleColorSpinner = MKSpinner.singleColorSpinner()
   .withStyle(styles.spinner)
   .build();
 
-const Progress = React.createClass({
-  componentDidMount: function () {
-    setTimeout((() => {
+export default class extends React.Component {
+  componentDidMount() {
+    setTimeout(() => {
       if (this.refs.progBarWithBuffer) {
         this.refs.progBarWithBuffer.buffer = 0.8;
       }
-    }), 1000);
-    setTimeout((() => {
+    }, 1000);
+    setTimeout(() => {
       if (this.refs.progBar && this.refs.progBarWithBuffer) {
         this.refs.progBar.progress = 0.6;
         this.refs.progBarWithBuffer.progress = 0.6;
       }
-    }), 1600);
-  },
+    }, 1600);
+  }
 
-  render: function() {
-    return (
+  render = () => (
       <ScrollView style={styles.scrollView}
                   contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
             <MKProgress
-              ref="progBar"
-              style={styles.progress}
-              progress={0.2}
-              />
+                ref="progBar"
+                style={styles.progress}
+                progress={0.2}
+            />
             <Text style={styles.legendLabel}>Default progress bar</Text>
           </View>
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
             <MKProgress.Indeterminate
-              style={styles.progress}
+                style={styles.progress}
             />
             <Text style={styles.legendLabel}>Indeterminate</Text>
           </View>
@@ -72,11 +71,11 @@ const Progress = React.createClass({
         <View style={styles.row}>
           <View style={styles.col}>
             <MKProgress
-              ref="progBarWithBuffer"
-              style={styles.progress}
-              progress={0.2}
-              buffer={0.3}
-              />
+                ref="progBarWithBuffer"
+                style={styles.progress}
+                progress={0.2}
+                buffer={0.3}
+            />
             <Text style={styles.legendLabel}>Buffering</Text>
           </View>
         </View>
@@ -91,8 +90,5 @@ const Progress = React.createClass({
           </View>
         </View>
       </ScrollView>
-    );
-  },
-});
-
-module.exports = Progress;
+  );
+}
