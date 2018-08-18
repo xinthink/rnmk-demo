@@ -10,13 +10,18 @@
 - Checkout [RNMK Demo] and [RNMK]
 - Link your local RNMK module to the demo project
   ```sh
-  cd rnmk-demo
-  npm link <local-rnmk-path>
-  npm install
+  cd <local-rnmk-path>
+  yarn link
 
+  cd rnmk-demo
+  yarn link react-native-material-kit
+  yarn install
   ```
-- Launch the packager
-  - RN's packager [doesn't resolve symbolic links], so you have to use the command `npm start` or `./packager.sh` to start the packager
+- Commands
+  - `npm start` to start the dev server
+  - `npm run ios` builds your app and starts it on iOS simulator
+  - `npm run android` builds your app and starts it on a connected Android emulator or device
+  - or run any `react-native-cli` commands: `npm run cli -- [options] [command]`
 - And then run the rnmk-demo Xcode project
   - if the `RCTMaterialKit` project is not resolved correctly (shown as red text in Xcode), please remove it and import it again (follows the [guide][ios guide])
 
