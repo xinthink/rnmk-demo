@@ -24,11 +24,11 @@ setTheme({
 });
 
 import Buttons from './app/buttons';
-import TextFields from './app/textfields';
+// import TextFields from './app/textfields';
 import Toggles from './app/toggles';
-import Progress from './app/progress';
-import Sliders from './app/sliders';
-import Cards from './app/cards';
+// import Progress from './app/progress';
+// import Sliders from './app/sliders';
+// import Cards from './app/cards';
 
 const Home = (props) => (
   <ScrollView
@@ -45,47 +45,47 @@ const Home = (props) => (
     >
       <Text style={styles.pushLabel}>Buttons</Text>
     </TouchableOpacity>
-    <TouchableOpacity
-      onPress={() =>
-        props.navigator.push({
-          title: 'Cards',
-          component: Cards,
-        })
-      }
-    >
-      <Text style={styles.pushLabel}>Cards</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      onPress={() =>
-        props.navigator.push({
-          title: 'Loading',
-          component: Progress,
-        })
-      }
-    >
-      <Text style={styles.pushLabel}>Loading</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      onPress={() =>
-        props.navigator.push({
-          title: 'Sliders',
-          component: Sliders,
-        })
-      }
-    >
-      <Text style={styles.pushLabel}>Sliders</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      onPress={() =>
-        props.navigator.push({
-          title: 'Text Fields',
-          component: TextFields,
-        })
-      }
-    >
-      <Text style={styles.pushLabel}>Text Fields</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
+    {/*<TouchableOpacity*/}
+      {/*onPress={() =>*/}
+        {/*props.navigator.push({*/}
+          {/*title: 'Cards',*/}
+          {/*component: Cards,*/}
+        {/*})*/}
+      {/*}*/}
+    {/*>*/}
+      {/*<Text style={styles.pushLabel}>Cards</Text>*/}
+    {/*</TouchableOpacity>*/}
+    {/*<TouchableOpacity*/}
+      {/*onPress={() =>*/}
+        {/*props.navigator.push({*/}
+          {/*title: 'Loading',*/}
+          {/*component: Progress,*/}
+        {/*})*/}
+      {/*}*/}
+    {/*>*/}
+      {/*<Text style={styles.pushLabel}>Loading</Text>*/}
+    {/*</TouchableOpacity>*/}
+    {/*<TouchableOpacity*/}
+      {/*onPress={() =>*/}
+        {/*props.navigator.push({*/}
+          {/*title: 'Sliders',*/}
+          {/*component: Sliders,*/}
+        {/*})*/}
+      {/*}*/}
+    {/*>*/}
+      {/*<Text style={styles.pushLabel}>Sliders</Text>*/}
+    {/*</TouchableOpacity>*/}
+    {/*<TouchableOpacity*/}
+      {/*onPress={() =>*/}
+        {/*props.navigator.push({*/}
+          {/*title: 'Text Fields',*/}
+          {/*component: TextFields,*/}
+        {/*})*/}
+      {/*}*/}
+    {/*>*/}
+      {/*<Text style={styles.pushLabel}>Text Fields</Text>*/}
+    {/* </TouchableOpacity> */}
+     <TouchableOpacity
       onPress={() =>
         props.navigator.push({
           title: 'Toggles',

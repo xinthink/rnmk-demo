@@ -12,12 +12,27 @@ import {
 } from 'react-native';
 
 import {
-  MKButton,
+  Button,
+  ButtonStyles,
+  ColoredRaisedButton,
+  RaisedButton,
+  FlatButton,
+  Fab,
+  ColoredFab,
+  AccentFab,
   MKColor,
   // setTheme,
+  getTheme,
 } from 'react-native-material-kit';
 
 import appStyles from './styles';
+
+const {
+  buttonText,
+  buttonTextAccent,
+  buttonTextPrimary,
+  coloredButtonText,
+} = ButtonStyles;
 
 // customize the material design theme
 // setTheme({
@@ -38,61 +53,46 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
 }));
 
-const ColoredRaisedButton = MKButton.coloredButton()
-  .withText('BUTTON')
-  .withOnPress(() => {
-    console.log("Hi, it's a colored button!");
-  })
-  .build();
-const AccentColoredRaisedButton = MKButton.accentColoredButton()
-  .build();
-const PlainRaisedButton = MKButton.button()
-  .withText('BUTTON')
-  .build();
-const FlatButton = MKButton.flatButton()
-  .withText('BUTTON')
-  .build();
-const ColoredFlatButton = MKButton.coloredFlatButton()
-  .withText('BUTTON')
-  .build();
-const AccentColoredFlatButton = MKButton.accentColoredFlatButton()
-  .withText('BUTTON')
-  .build();
-
-const ColoredFab = MKButton.coloredFab()
-  .withStyle(styles.fab)
-  .build();
-const AccentColoredFab = MKButton.accentColoredFab()
-  .withStyle(styles.fab)
-  .build();
-const PlainFab = MKButton.plainFab()
-  .withStyle(styles.fab)
-  .build();
-
 export default () => (
-    <ScrollView style={styles.scrollView}
-                contentContainerStyle={styles.container}>
+    <ScrollView
+      style={styles.scrollView}
+      contentContainerStyle={styles.container}
+    >
       <View style={styles.row}>
         <View style={styles.col}>
-          <PlainRaisedButton/>
+          <RaisedButton>
+            <Text style={buttonText()}>BUTTON</Text>
+          </RaisedButton>
           <Text style={styles.legendLabel}>Raised button</Text>
         </View>
         <View style={styles.col}>
-          <ColoredRaisedButton/>
+          <ColoredRaisedButton>
+            <Text style={coloredButtonText()}>BUTTON</Text>
+          </ColoredRaisedButton>
           <Text style={styles.legendLabel}>Colored</Text>
         </View>
         <View style={styles.col}>
-          <AccentColoredRaisedButton>
-            <Text pointerEvents="none" style={styles.buttonText}>BUTTON</Text>
-          </AccentColoredRaisedButton>
+          {/* Or use AccentRaisedButton */}
+          <ColoredRaisedButton
+            style={{
+              backgroundColor: getTheme().accentColor,
+            }}
+          >
+            <Text
+              pointerEvents="none"
+              style={[coloredButtonText(), styles.buttonText]}
+            >
+              BUTTON
+            </Text>
+          </ColoredRaisedButton>
           <Text style={styles.legendLabel}>Accent colored</Text>
         </View>
       </View>
       <View style={styles.row}>
         <View style={styles.col}>
-          <PlainFab>
+          <Fab>
             <Image pointerEvents="none" source={require('../img/plus_dark.png')}/>
-          </PlainFab>
+          </Fab>
           <Text style={styles.legendLabel}>Plain FAB</Text>
         </View>
         <View style={styles.col}>
@@ -102,23 +102,32 @@ export default () => (
           <Text style={styles.legendLabel}>Colored</Text>
         </View>
         <View style={styles.col}>
-          <AccentColoredFab>
+          <AccentFab>
             <Image pointerEvents="none" source={require('../img/plus_white.png')}/>
-          </AccentColoredFab>
+          </AccentFab>
           <Text style={styles.legendLabel}>Accent colored</Text>
         </View>
       </View>
       <View style={styles.row}>
         <View style={styles.col}>
-          <FlatButton/>
+          <FlatButton>
+            <Text style={buttonText()}>BUTTON</Text>
+          </FlatButton>
           <Text style={styles.legendLabel}>Flat button</Text>
         </View>
         <View style={styles.col}>
-          <ColoredFlatButton/>
+          <FlatButton>
+            <Text style={buttonTextPrimary()}>BUTTON</Text>
+          </FlatButton>
           <Text style={styles.legendLabel}>Colored</Text>
         </View>
         <View style={styles.col}>
-          <AccentColoredFlatButton/>
+          {/* custom ripple color */}
+          <FlatButton
+            rippleColor='rgba(253, 216, 53, 0.3)'
+          >
+            <Text style={buttonTextAccent()}>BUTTON</Text>
+          </FlatButton>
           <Text style={styles.legendLabel}>Accent colored</Text>
         </View>
       </View>

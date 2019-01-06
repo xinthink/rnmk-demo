@@ -11,22 +11,23 @@ import {
 } from 'react-native';
 
 import {
-  MKIconToggle,
-  MKSwitch,
-  MKRadioButton,
-  MKCheckbox,
-  MKColor,
+  // MKIconToggle,
+  // MKSwitch,
+  // MKRadioButton,
+  // MKCheckbox,
+  Checkbox,
   getTheme,
   setTheme,
+  MKColor,
 } from 'react-native-material-kit';
 
 import appStyles from './styles';
-//
-//// customize the material design theme
+
+// customize the material design theme
 // setTheme({
-//   primaryColor: MKColor.Purple,
-//   primaryColorRGB: MKColor.RGBPurple,
-//   accentColor: MKColor.Amber,
+//   primaryColor: MKColor.Amber,
+//   primaryColorRGB: MKColor.RGBAmber,
+//   accentColor: MKColor.Teal,
 // });
 
 //setTheme({radioStyle: {
@@ -35,13 +36,13 @@ import appStyles from './styles';
 //  borderOffColor: `rgba(${MKColor.RGBTeal},.3)`,
 //  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
 //}});
-//
-//setTheme({checkboxStyle: {
-//  fillColor: MKColor.Teal,
-//  borderOnColor: MKColor.Teal,
-//  borderOffColor: MKColor.Teal,
-//  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
-//}});
+
+setTheme({checkboxStyle: {
+  fillColor: MKColor.Amber,
+  borderOnColor: MKColor.Amber,
+  borderOffColor: `rgba(${MKColor.RGBAmber},.65)`,
+  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+}});
 
 const styles = Object.assign({}, appStyles, StyleSheet.create({
   toggleText: {
@@ -63,11 +64,10 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
   },
 }));
 
-
 class Toggles extends Component {
   constructor() {
     super();
-    this.radioGroup = new MKRadioButton.Group();
+    // this.radioGroup = new MKRadioButton.Group();
   }
 
   _onChecked(event) {
@@ -82,68 +82,68 @@ class Toggles extends Component {
     return (
       <ScrollView style={styles.scrollView}
                   contentContainerStyle={styles.container}>
+        {/*<View style={styles.row}>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKIconToggle*/}
+              {/*checked={true}*/}
+              {/*onCheckedChange={this._onChecked}*/}
+              {/*onPress={this._onToggleClicked}*/}
+            {/*>*/}
+              {/*<Text state_checked={true}*/}
+                    {/*style={[styles.toggleText, styles.toggleOnText]}>T</Text>*/}
+              {/*<Text style={styles.toggleText}>T</Text>*/}
+            {/*</MKIconToggle>*/}
+            {/*<Text style={styles.legendLabel}>Icon on</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKIconToggle>*/}
+              {/*<Text state_checked={true}*/}
+                    {/*style={[styles.toggleText, styles.toggleOnText]}>B</Text>*/}
+              {/*<Text style={styles.toggleText}>B</Text>*/}
+            {/*</MKIconToggle>*/}
+            {/*<Text style={styles.legendLabel}>Icon off</Text>*/}
+          {/*</View>*/}
+        {/*</View>*/}
+        {/*<View style={styles.row}>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKSwitch checked={true}*/}
+                        {/*style={styles.switch}*/}
+            {/*/>*/}
+            {/*<Text style={styles.legendLabel}>Switch on</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKSwitch style={styles.appleSwitch}*/}
+                        {/*trackSize={30}*/}
+                        {/*trackLength={52}*/}
+                        {/*onColor="rgba(255,152,0,.3)"*/}
+                        {/*thumbOnColor={MKColor.Orange}*/}
+                        {/*rippleColor="rgba(255,152,0,.2)"*/}
+                        {/*onPress={() => console.log('orange switch pressed')}*/}
+                        {/*onCheckedChange={(e) => console.log('orange switch checked', e)}*/}
+              {/*/>*/}
+            {/*<Text style={styles.legendLabel}>Switch off</Text>*/}
+          {/*</View>*/}
+        {/*</View>*/}
+        {/*<View style={styles.row}>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKRadioButton*/}
+              {/*checked={true}*/}
+              {/*group={this.radioGroup}*/}
+              {/*/>*/}
+            {/*<Text style={styles.legendLabel}>First</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.col}>*/}
+            {/*<MKRadioButton group={this.radioGroup}/>*/}
+            {/*<Text style={styles.legendLabel}>Second</Text>*/}
+          {/*</View>*/}
+        {/*</View>*/}
         <View style={styles.row}>
           <View style={styles.col}>
-            <MKIconToggle
-              checked={true}
-              onCheckedChange={this._onChecked}
-              onPress={this._onToggleClicked}
-            >
-              <Text state_checked={true}
-                    style={[styles.toggleText, styles.toggleOnText]}>T</Text>
-              <Text style={styles.toggleText}>T</Text>
-            </MKIconToggle>
-            <Text style={styles.legendLabel}>Icon on</Text>
-          </View>
-          <View style={styles.col}>
-            <MKIconToggle>
-              <Text state_checked={true}
-                    style={[styles.toggleText, styles.toggleOnText]}>B</Text>
-              <Text style={styles.toggleText}>B</Text>
-            </MKIconToggle>
-            <Text style={styles.legendLabel}>Icon off</Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <MKSwitch checked={true}
-                        style={styles.switch}
-            />
-            <Text style={styles.legendLabel}>Switch on</Text>
-          </View>
-          <View style={styles.col}>
-            <MKSwitch style={styles.appleSwitch}
-                        trackSize={30}
-                        trackLength={52}
-                        onColor="rgba(255,152,0,.3)"
-                        thumbOnColor={MKColor.Orange}
-                        rippleColor="rgba(255,152,0,.2)"
-                        onPress={() => console.log('orange switch pressed')}
-                        onCheckedChange={(e) => console.log('orange switch checked', e)}
-              />
-            <Text style={styles.legendLabel}>Switch off</Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <MKRadioButton
-              checked={true}
-              group={this.radioGroup}
-              />
-            <Text style={styles.legendLabel}>First</Text>
-          </View>
-          <View style={styles.col}>
-            <MKRadioButton group={this.radioGroup}/>
-            <Text style={styles.legendLabel}>Second</Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <View style={styles.col}>
-            <MKCheckbox checked={true} />
+            <Checkbox checked={true} />
             <Text style={styles.legendLabel}>Checked</Text>
           </View>
           <View style={styles.col}>
-            <MKCheckbox />
+            <Checkbox />
             <Text style={styles.legendLabel}>Unchecked</Text>
           </View>
         </View>

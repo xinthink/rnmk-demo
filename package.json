@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
-    "iosx": "npm run ios -- --simulator='iPhone X'",
+    "iosx": "yarn ios --simulator='iPhone XR'",
     "android": "react-native run-android",
     "cli": "react-native",
     "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S"
