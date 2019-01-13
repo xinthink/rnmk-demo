@@ -11,14 +11,15 @@ import {
 } from 'react-native';
 
 import {
+  getTheme,
+  MKColor,
+  setTheme,
+
   // MKIconToggle,
   // MKSwitch,
   // MKRadioButton,
-  // MKCheckbox,
   Checkbox,
-  getTheme,
-  setTheme,
-  MKColor,
+  IconToggle,
 } from 'react-native-material-kit';
 
 import appStyles from './styles';
@@ -82,28 +83,28 @@ class Toggles extends Component {
     return (
       <ScrollView style={styles.scrollView}
                   contentContainerStyle={styles.container}>
-        {/*<View style={styles.row}>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKIconToggle*/}
-              {/*checked={true}*/}
-              {/*onCheckedChange={this._onChecked}*/}
-              {/*onPress={this._onToggleClicked}*/}
-            {/*>*/}
-              {/*<Text state_checked={true}*/}
-                    {/*style={[styles.toggleText, styles.toggleOnText]}>T</Text>*/}
-              {/*<Text style={styles.toggleText}>T</Text>*/}
-            {/*</MKIconToggle>*/}
-            {/*<Text style={styles.legendLabel}>Icon on</Text>*/}
-          {/*</View>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKIconToggle>*/}
-              {/*<Text state_checked={true}*/}
-                    {/*style={[styles.toggleText, styles.toggleOnText]}>B</Text>*/}
-              {/*<Text style={styles.toggleText}>B</Text>*/}
-            {/*</MKIconToggle>*/}
-            {/*<Text style={styles.legendLabel}>Icon off</Text>*/}
-          {/*</View>*/}
-        {/*</View>*/}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <IconToggle
+              checked
+              onCheckedChange={this._onChecked}
+              onPress={this._onToggleClicked}
+            >
+              <Text stateChecked
+                    style={[styles.toggleText, styles.toggleOnText]}>T</Text>
+              <Text style={styles.toggleText}>T</Text>
+            </IconToggle>
+            <Text style={styles.legendLabel}>Icon on</Text>
+          </View>
+          <View style={styles.col}>
+            <IconToggle>
+              <Text stateChecked
+                    style={[styles.toggleText, styles.toggleOnText]}>B</Text>
+              <Text style={styles.toggleText}>B</Text>
+            </IconToggle>
+            <Text style={styles.legendLabel}>Icon off</Text>
+          </View>
+        </View>
         {/*<View style={styles.row}>*/}
           {/*<View style={styles.col}>*/}
             {/*<MKSwitch checked={true}*/}
