@@ -15,11 +15,9 @@ import {
   MKColor,
   setTheme,
 
-  // MKIconToggle,
-  // MKSwitch,
-  // MKRadioButton,
   Checkbox,
   IconToggle,
+  Switch,
 } from 'react-native-material-kit';
 
 import appStyles from './styles';
@@ -105,26 +103,25 @@ class Toggles extends Component {
             <Text style={styles.legendLabel}>Icon off</Text>
           </View>
         </View>
-        {/*<View style={styles.row}>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKSwitch checked={true}*/}
-                        {/*style={styles.switch}*/}
-            {/*/>*/}
-            {/*<Text style={styles.legendLabel}>Switch on</Text>*/}
-          {/*</View>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKSwitch style={styles.appleSwitch}*/}
-                        {/*trackSize={30}*/}
-                        {/*trackLength={52}*/}
-                        {/*onColor="rgba(255,152,0,.3)"*/}
-                        {/*thumbOnColor={MKColor.Orange}*/}
-                        {/*rippleColor="rgba(255,152,0,.2)"*/}
-                        {/*onPress={() => console.log('orange switch pressed')}*/}
-                        {/*onCheckedChange={(e) => console.log('orange switch checked', e)}*/}
-              {/*/>*/}
-            {/*<Text style={styles.legendLabel}>Switch off</Text>*/}
-          {/*</View>*/}
-        {/*</View>*/}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <Switch checked style={styles.switch}/>
+            <Text style={styles.legendLabel}>Switch on</Text>
+          </View>
+          <View style={styles.col}>
+            <Switch
+              style={styles.appleSwitch}
+              trackSize={30}
+              trackLength={52}
+              onColor="rgba(255,152,0,.3)"
+              thumbOnColor={MKColor.Orange}
+              rippleColor="rgba(255,152,0,.2)"
+              onPress={() => console.log('orange switch pressed')}
+              onCheckedChange={({checked}) => console.log('orange switch checked:', checked)}
+            />
+            <Text style={styles.legendLabel}>Switch off</Text>
+          </View>
+        </View>
         {/*<View style={styles.row}>*/}
           {/*<View style={styles.col}>*/}
             {/*<MKRadioButton*/}
