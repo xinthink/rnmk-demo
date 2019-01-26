@@ -17,6 +17,8 @@ import {
 
   Checkbox,
   IconToggle,
+  RadioButton,
+  RadioButtonGroup,
   Switch,
 } from 'react-native-material-kit';
 
@@ -66,7 +68,7 @@ const styles = Object.assign({}, appStyles, StyleSheet.create({
 class Toggles extends Component {
   constructor() {
     super();
-    // this.radioGroup = new MKRadioButton.Group();
+    this.radioGroup = new RadioButtonGroup();
   }
 
   _onChecked(event) {
@@ -122,19 +124,19 @@ class Toggles extends Component {
             <Text style={styles.legendLabel}>Switch off</Text>
           </View>
         </View>
-        {/*<View style={styles.row}>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKRadioButton*/}
-              {/*checked={true}*/}
-              {/*group={this.radioGroup}*/}
-              {/*/>*/}
-            {/*<Text style={styles.legendLabel}>First</Text>*/}
-          {/*</View>*/}
-          {/*<View style={styles.col}>*/}
-            {/*<MKRadioButton group={this.radioGroup}/>*/}
-            {/*<Text style={styles.legendLabel}>Second</Text>*/}
-          {/*</View>*/}
-        {/*</View>*/}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <RadioButton
+              checked={true}
+              group={this.radioGroup}
+              />
+            <Text style={styles.legendLabel}>First</Text>
+          </View>
+          <View style={styles.col}>
+            <RadioButton group={this.radioGroup}/>
+            <Text style={styles.legendLabel}>Second</Text>
+          </View>
+        </View>
         <View style={styles.row}>
           <View style={styles.col}>
             <Checkbox checked={true} />
