@@ -7,9 +7,7 @@ import {
 } from 'react-native';
 
 import {
-  MKButton,
-  MKColor,
-  MKIconToggle,
+  IconToggle,
   getTheme,
 } from 'react-native-material-kit';
 
@@ -20,17 +18,17 @@ const theme = getTheme();
 const base64Icon = 'http://www.getmdl.io/assets/demos/welcome_card.jpg';
 const action = <Text> My action</Text>;
 const menu = (
-    <MKIconToggle
+    <IconToggle
         checked={true}
         onCheckedChange={this._onIconChecked}
         onPress={this._onIconClicked}
     >
       <Text pointerEvents="none"
             style={styles.toggleTextOff}>Off</Text>
-      <Text state_checked={true}
+      <Text stateChecked
             pointerEvents="none"
             style={[styles.toggleText, styles.toggleTextOn]}>On</Text>
-    </MKIconToggle>
+    </IconToggle>
 );
 
 export default () => (
