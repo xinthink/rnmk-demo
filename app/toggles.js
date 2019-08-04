@@ -3,18 +3,12 @@
  */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import {
   getTheme,
   MKColor,
   setTheme,
-
   Checkbox,
   IconToggle,
   RadioButton,
@@ -38,34 +32,44 @@ import appStyles from './styles';
 //  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
 //}});
 
-setTheme({checkboxStyle: {
-  fillColor: MKColor.Amber,
-  borderOnColor: MKColor.Amber,
-  borderOffColor: `rgba(${MKColor.RGBAmber},.65)`,
-  rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
-}});
+setTheme({
+  checkboxStyle: {
+    fillColor: MKColor.Amber,
+    borderOnColor: MKColor.Amber,
+    borderOffColor: `rgba(${MKColor.RGBAmber},.65)`,
+    rippleColor: `rgba(${MKColor.RGBTeal},.15)`,
+  },
+});
 
-const styles = Object.assign({}, appStyles, StyleSheet.create({
-  toggleText: {
-    fontSize: 16,
-    fontStyle: 'italic',
-    fontWeight: 'bold',
-    color: '#616161',
-  },
-  toggleOnText: {
-    color: getTheme().primaryColor,
-  },
-  switch: {
-    marginTop: 2,
-    // marginBottom: 5,
-  },
-  appleSwitch: {
-    marginTop: 7,
-    marginBottom: 7,
-  },
-}));
+const styles = Object.assign(
+  {},
+  appStyles,
+  StyleSheet.create({
+    toggleText: {
+      fontSize: 16,
+      fontStyle: 'italic',
+      fontWeight: 'bold',
+      color: '#616161',
+    },
+    toggleOnText: {
+      color: getTheme().primaryColor,
+    },
+    switch: {
+      marginTop: 2,
+      // marginBottom: 5,
+    },
+    appleSwitch: {
+      marginTop: 7,
+      marginBottom: 7,
+    },
+  })
+);
 
 class Toggles extends Component {
+  static navigationOptions = {
+    title: 'Toggles',
+  };
+
   constructor() {
     super();
     this.radioGroup = new RadioButtonGroup();
@@ -81,25 +85,22 @@ class Toggles extends Component {
 
   render() {
     return (
-      <ScrollView style={styles.scrollView}
-                  contentContainerStyle={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.container}>
         <View style={styles.row}>
           <View style={styles.col}>
-            <IconToggle
-              checked
-              onCheckedChange={this._onChecked}
-              onPress={this._onToggleClicked}
-            >
-              <Text stateChecked
-                    style={[styles.toggleText, styles.toggleOnText]}>T</Text>
+            <IconToggle checked onCheckedChange={this._onChecked} onPress={this._onToggleClicked}>
+              <Text stateChecked style={[styles.toggleText, styles.toggleOnText]}>
+                T
+              </Text>
               <Text style={styles.toggleText}>T</Text>
             </IconToggle>
             <Text style={styles.legendLabel}>Icon on</Text>
           </View>
           <View style={styles.col}>
             <IconToggle>
-              <Text stateChecked
-                    style={[styles.toggleText, styles.toggleOnText]}>B</Text>
+              <Text stateChecked style={[styles.toggleText, styles.toggleOnText]}>
+                B
+              </Text>
               <Text style={styles.toggleText}>B</Text>
             </IconToggle>
             <Text style={styles.legendLabel}>Icon off</Text>
@@ -107,7 +108,7 @@ class Toggles extends Component {
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <Switch checked style={styles.switch}/>
+            <Switch checked style={styles.switch} />
             <Text style={styles.legendLabel}>Switch on</Text>
           </View>
           <View style={styles.col}>
@@ -119,27 +120,24 @@ class Toggles extends Component {
               thumbOnColor={MKColor.Orange}
               rippleColor="rgba(255,152,0,.2)"
               onPress={() => console.log('orange switch pressed')}
-              onCheckedChange={({checked}) => console.log('orange switch checked:', checked)}
+              onCheckedChange={({ checked }) => console.log('orange switch checked:', checked)}
             />
             <Text style={styles.legendLabel}>Switch off</Text>
           </View>
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <RadioButton
-              checked={true}
-              group={this.radioGroup}
-              />
+            <RadioButton checked={true} group={this.radioGroup} />
             <Text style={styles.legendLabel}>First</Text>
           </View>
           <View style={styles.col}>
-            <RadioButton group={this.radioGroup}/>
+            <RadioButton group={this.radioGroup} />
             <Text style={styles.legendLabel}>Second</Text>
           </View>
         </View>
         <View style={styles.row}>
           <View style={styles.col}>
-            <Checkbox checked={true} />
+            <Checkbox checked />
             <Text style={styles.legendLabel}>Checked</Text>
           </View>
           <View style={styles.col}>

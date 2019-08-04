@@ -1,14 +1,8 @@
-rootProject.name = 'RNMKDemo'
-
 // resolve symbolic links if need
-def resolve(File dir) {
+static def resolve(File dir) {
     dir.toPath().toAbsolutePath().toFile()
 }
 
+rootProject.name = 'RNMKDemo'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
-
-include ':RNMaterialKit'
-project(':RNMaterialKit').projectDir = resolve file('../Libraries/react-native-material-kit/android')
-
-//include ':ReactAndroid'
-//project(':ReactAndroid').projectDir = file('../node_modules/react-native/ReactAndroid')

@@ -1,5 +1,5 @@
-var {StyleSheet, Platform} = require('react-native');
-var {MKColor} = require('react-native-material-kit');
+import { StyleSheet } from 'react-native';
+import { MKColor } from 'react-native-material-kit';
 
 export default StyleSheet.create({
   scrollView: {
@@ -9,8 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
-    padding: 20,
-    marginTop: Platform.OS === 'android' ? 56 : 0,
+    padding: 24,
   },
   row: {
     flexDirection: 'row',

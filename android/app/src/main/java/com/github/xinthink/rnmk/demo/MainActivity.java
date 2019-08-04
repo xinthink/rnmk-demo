@@ -1,7 +1,5 @@
 package com.github.xinthink.rnmk.demo;
 
-import android.support.annotation.NonNull;
-
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
@@ -11,7 +9,7 @@ public class MainActivity extends ReactActivity {
      * This is used to schedule rendering of the component.
      */
     @Override
-    protected @NonNull String getMainComponentName() {
-        return "Example";
+    protected String getMainComponentName() {
+        return "RNMKDemo";
     }
 }

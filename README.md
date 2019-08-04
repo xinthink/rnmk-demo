@@ -9,21 +9,20 @@
 
 - Checkout [RNMK Demo]
 - Clone [RNMK] into the *Libraries* directory (inside the demo project)
+- Edit `react-native.config.js` file, replace `<absolute_project_root>` with your local project directory
 - Link your local RNMK module to the demo project
   ```sh
   cd rnmk-demo
   yarn
 
-  cd Libraries/react-native-material-kit
-  yarn
+  (cd Libraries/react-native-material-kit && yarn && yarn build)
+  (cd iOS && pod install)
   ```
 - Commands
-  - `npm start` to start the dev server
-  - `npm run ios` builds your app and starts it on iOS simulator
-  - `npm run android` builds your app and starts it on a connected Android emulator or device
-  - or run any `react-native-cli` commands: `npm run cli -- [options] [command]`
-- And then run the rnmk-demo Xcode project
-  - if the `RCTMaterialKit` project is not resolved correctly (shown as red text in Xcode), please remove it and import it again (follows the [guide][ios guide])
+  - `yarn start` to start the dev server
+  - `yarn iosx` build your app and starts it on iOS simulator
+  - `yarn android` build your app and starts it on a connected Android emulator or device
+  - or run any `react-native` commands: `yarn cli [options] [command]`
 
 ## License
 [MIT][license]

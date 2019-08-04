@@ -1,22 +1,37 @@
 {
-  "name": "rnmk-demo",
+  "name": "rnmk_demo",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "ios": "react-native run-ios",
-    "iosx": "yarn ios --simulator='iPhone Xʀ'",
-    "ls-simulators": "xcrun simctl list",
-    "android": "react-native run-android",
     "cli": "react-native",
-    "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S"
+    "devices": "xcrun simctl list && adb devices",
+    "ios": "yarn cli run-ios",
+    "iosx": "yarn ios --simulator='iPhone Xʀ'",
+    "android": "yarn cli run-android",
+    "logcat": "adb logcat ReactNativeJS:V RNMK:V AndroidRuntime:E System.out:V System.err:V *:S",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.4.1",
-    "react-native": "^0.56.0",
-    "react-native-deprecated-custom-components": "^0.1.2"
+    "react": "16.8.6",
+    "react-native": "0.60.4",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-reanimated": "^1.1.0",
+    "react-navigation": "^3.11.1"
   },
   "devDependencies": {
-    "react-native-cli": "^2.0.1"
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "react-test-renderer": "16.8.6"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }
