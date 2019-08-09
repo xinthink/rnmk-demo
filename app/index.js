@@ -20,7 +20,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Buttons from './buttons';
 // import TextFields from './textfields';
 import Toggles from './toggles';
-// import Progress from './progress';
+import Progress from './progress';
 // import Sliders from './sliders';
 import Cards from './cards';
 
@@ -32,16 +32,9 @@ const Home = props => (
     <TouchableOpacity onPress={() => navigate(props, 'cards')}>
       <Text style={styles.pushLabel}>Cards</Text>
     </TouchableOpacity>
-    {/*<TouchableOpacity*/}
-    {/*onPress={() =>*/}
-    {/*props.navigator.push({*/}
-    {/*title: 'Loading',*/}
-    {/*component: Progress,*/}
-    {/*})*/}
-    {/*}*/}
-    {/*>*/}
-    {/*<Text style={styles.pushLabel}>Loading</Text>*/}
-    {/*</TouchableOpacity>*/}
+    <TouchableOpacity onPress={() => navigate(props, 'progress')}>
+      <Text style={styles.pushLabel}>Loading</Text>
+    </TouchableOpacity>
     {/*<TouchableOpacity*/}
     {/*onPress={() =>*/}
     {/*props.navigator.push({*/}
@@ -76,6 +69,7 @@ const MainNavigator = createStackNavigator({
   home: { screen: Home },
   buttons: { screen: Buttons },
   cards: { screen: Cards },
+  progress: { screen: Progress },
   toggles: { screen: Toggles },
 });
 
