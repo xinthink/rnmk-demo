@@ -18,7 +18,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 // });
 
 import Buttons from './buttons';
-// import TextFields from './textfields';
+import TextFields from './textfields';
 import Toggles from './toggles';
 import Progress from './progress';
 import Sliders from './sliders';
@@ -38,16 +38,9 @@ const Home = props => (
     <TouchableOpacity onPress={() => navigate(props, 'sliders')}>
       <Text style={styles.pushLabel}>Sliders</Text>
     </TouchableOpacity>
-    {/*<TouchableOpacity*/}
-    {/*onPress={() =>*/}
-    {/*props.navigator.push({*/}
-    {/*title: 'Text Fields',*/}
-    {/*component: TextFields,*/}
-    {/*})*/}
-    {/*}*/}
-    {/*>*/}
-    {/*<Text style={styles.pushLabel}>Text Fields</Text>*/}
-    {/* </TouchableOpacity> */}
+    <TouchableOpacity onPress={() => navigate(props, 'textfields')}>
+      <Text style={styles.pushLabel}>Text Fields</Text>
+    </TouchableOpacity>
     <TouchableOpacity onPress={() => navigate(props, 'toggles')}>
       <Text style={styles.pushLabel}>Toggles</Text>
     </TouchableOpacity>
@@ -65,6 +58,7 @@ const MainNavigator = createStackNavigator({
   progress: { screen: Progress },
   sliders: { screen: Sliders },
   toggles: { screen: Toggles },
+  textfields: { screen: TextFields },
 });
 
 function navigate(props, route, params, action) {
