@@ -27,13 +27,12 @@ export default class extends React.Component {
   static navigationOptions = {
     title: 'Loading',
   };
-  _progRef: React.RefObject<Progress>;
-  _progWithBufferRef: React.RefObject<Progress>;
+
+  _progRef = createRef();
+  _progWithBufferRef = createRef();
 
   constructor(props) {
     super(props);
-    this._progRef = createRef();
-    this._progWithBufferRef = createRef();
   }
 
   componentDidMount() {
@@ -69,12 +68,7 @@ export default class extends React.Component {
       </View>
       <View style={styles.row}>
         <View style={styles.col}>
-          <Progress
-            ref={this._progWithBufferRef}
-            style={styles.progress}
-            progress={0.2}
-            buffer={0.3}
-          />
+          <Progress ref={this._progWithBufferRef} style={styles.progress} progress={0.2} buffer={0.3} />
           <Text style={styles.legendLabel}>Buffering</Text>
         </View>
       </View>
