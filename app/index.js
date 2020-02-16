@@ -63,7 +63,7 @@ const App = () => (
       <Stack.Screen name="Progress" component={Progress} options={{ title: 'Progress' }} />
       <Stack.Screen name="Sliders" component={Sliders} options={{ title: 'Sliders' }} />
       <Stack.Screen name="Toggles" component={Toggles} options={{ title: 'Toggles' }} />
-      <Stack.Screen name="Textfields" component={TextFields} options={{ title: 'Textfields' }} />
+      <Stack.Screen name="Textfields" component={TextFields} options={{ title: 'Text Fields' }} />
     </Stack.Navigator>
   </NavigationContainer>
 );

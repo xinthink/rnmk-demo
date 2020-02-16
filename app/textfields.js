@@ -32,10 +32,6 @@ const styles = Object.assign(
 );
 
 export default class extends React.Component {
-  static navigationOptions = {
-    title: 'Textfields',
-  };
-
   defaultInputRef = createRef();
 
   componentDidMount() {

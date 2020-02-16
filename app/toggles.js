@@ -66,10 +66,6 @@ const styles = Object.assign(
 );
 
 class Toggles extends Component {
-  static navigationOptions = {
-    title: 'Toggles',
-  };
-
   constructor() {
     super();
     this.radioGroup = new RadioButtonGroup();

@@ -17,6 +17,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* rnmk_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rnmk_demoTests.m */; };
+		8A9A595523F7E8A6007EEA6F /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9A595423F7E8A6007EEA6F /* libRCTMaterialKit.a */; };
+		8A9A595723F7E8B5007EEA6F /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9A595623F7E8B5007EEA6F /* libRCTMaterialKit.a */; };
 		A68223F74260DADD97F5F834 /* libPods-rnmk_demoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 547F199EFE9C3F3110EA1A08 /* libPods-rnmk_demoTests.a */; };
 		ADA92F094B6D6054D2D23363 /* libPods-rnmk_demo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A72A6229601646D5EE5EAD7 /* libPods-rnmk_demo-tvOS.a */; };
 		C7CF1084BA4C5E7556611521 /* libPods-rnmk_demo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121BC871A35BEE696BF347C4 /* libPods-rnmk_demo-tvOSTests.a */; };
@@ -60,6 +62,9 @@
 		4E09DD3D992A281BCDAEB87D /* Pods-rnmk_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnmk_demoTests.release.xcconfig"; path = "Target Support Files/Pods-rnmk_demoTests/Pods-rnmk_demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E3E80B0B612CF4C05C9CE04 /* Pods-rnmk_demo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnmk_demo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rnmk_demo-tvOS/Pods-rnmk_demo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		547F199EFE9C3F3110EA1A08 /* libPods-rnmk_demoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnmk_demoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A60E03123F7D0CB00FB07F2 /* libRCTMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9A595423F7E8A6007EEA6F /* libRCTMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9A595623F7E8B5007EEA6F /* libRCTMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTMaterialKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF735E8B1E915C189BA16A8 /* Pods-rnmk_demo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnmk_demo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rnmk_demo-tvOSTests/Pods-rnmk_demo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B74A24986AE300F264D70160 /* libPods-rnmk_demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnmk_demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79C9C876D93F0A7EF2F8722 /* Pods-rnmk_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnmk_demo.debug.xcconfig"; path = "Target Support Files/Pods-rnmk_demo/Pods-rnmk_demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F237470CC0646BDCFF9ADC /* libPods-rnmk_demo.a in Frameworks */,
+				8A9A595523F7E8A6007EEA6F /* libRCTMaterialKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADA92F094B6D6054D2D23363 /* libPods-rnmk_demo-tvOS.a in Frameworks */,
+				8A9A595723F7E8B5007EEA6F /* libRCTMaterialKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +141,6 @@
 				FCBC4D23CE8C966BD5791D99 /* Pods-rnmk_demoTests.debug.xcconfig */,
 				4E09DD3D992A281BCDAEB87D /* Pods-rnmk_demoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				8A9A595623F7E8B5007EEA6F /* libRCTMaterialKit.a */,
+				8A9A595423F7E8A6007EEA6F /* libRCTMaterialKit.a */,
+				8A60E03123F7D0CB00FB07F2 /* libRCTMaterialKit.a */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				B74A24986AE300F264D70160 /* libPods-rnmk_demo.a */,
 				2A72A6229601646D5EE5EAD7 /* libPods-rnmk_demo-tvOS.a */,
@@ -308,6 +317,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -595,7 +605,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xinthink.rnmk.demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinthink.rnmk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnmk_demo.app/rnmk_demo";
 			};
@@ -615,7 +625,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xinthink.rnmk.demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinthink.rnmk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rnmk_demo.app/rnmk_demo";
 			};
@@ -635,7 +645,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xinthink.rnmk.demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinthink.rnmk.demo;
 				PRODUCT_NAME = rnmk_demo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -654,7 +664,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xinthink.rnmk.demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinthink.rnmk.demo;
 				PRODUCT_NAME = rnmk_demo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -118,8 +118,4 @@ const Buttons = () => (
   </ScrollView>
 );
 
-Buttons.navigationOptions = {
-  title: 'Buttons',
-};
-
 export default Buttons;

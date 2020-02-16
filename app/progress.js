@@ -24,10 +24,6 @@ const styles = Object.assign(
 );
 
 export default class extends React.Component {
-  static navigationOptions = {
-    title: 'Loading',
-  };
-
   _progRef = createRef();
   _progWithBufferRef = createRef();
 

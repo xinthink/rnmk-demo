@@ -46,10 +46,6 @@ class ValueText extends Component {
 }
 
 class Sliders extends Component {
-  static navigationOptions = {
-    title: 'Sliders',
-  };
-
   sliderWithValue = createRef();
   rangeSlider = createRef();
   valueText = createRef();

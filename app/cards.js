@@ -44,8 +44,4 @@ const Cards = () => (
   </ScrollView>
 );
 
-Cards.navigationOptions = {
-  title: 'Cards',
-};
-
 export default Cards;

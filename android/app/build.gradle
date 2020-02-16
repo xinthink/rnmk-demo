@@ -177,6 +177,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation(project(':RNMaterialKit'))
 }
 
 // Run this once to be able to run the application with BUCK
