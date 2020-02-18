@@ -1,4 +1,10 @@
-# react-native-material-kit demo
+**:warning: Deprecated**
+
+This repo is deprecated, for its place, an example app is added inside the [react-native-material-kit repo][rnmk example].
+
+---
+
+# ~~react-native-material-kit demo~~
 
 ## RNMK resources
 - [GitHub][RNMK]
@@ -27,6 +33,7 @@
 ## License
 [MIT][license]
 
+[rnmk example]: https://github.com/xinthink/react-native-material-kit/tree/master/example
 [RNMK Demo]: https://github.com/xinthink/rnmk-demo
 [RNMK]: https://github.com/xinthink/react-native-material-kit
 [docs]: http://xinthink.github.io/react-native-material-kit/docs/index.html
